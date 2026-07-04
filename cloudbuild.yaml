@@ -1,10 +1,12 @@
 steps:
-  # Step 0: Ensure gradlew has execution permission (needed when source is uploaded from Windows or git index doesn't have it)
+  # Step 0: Ensure gradlew has execution permission and make the workspace directory writable for the builder container
   - name: "alpine"
-    entrypoint: "chmod"
+    entrypoint: "sh"
     args:
-      - "+x"
-      - "gradlew"
+      - "-c"
+      - |
+        chmod +x gradlew
+        chmod -R 777 .
     dir: "app/lifelog"
 
   # Step 1: Build the Quarkus Native application and push the container image directly to Artifact Registry (using Jib)
