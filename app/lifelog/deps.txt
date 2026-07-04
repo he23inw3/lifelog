@@ -1,0 +1,1470 @@
+
+> Task :dependencies
+
+------------------------------------------------------------
+Root project 'lifelog'
+------------------------------------------------------------
+
+compileClasspath - Compile classpath for source set 'main'.
++--- org.projectlombok:lombok:1.18.46
++--- io.quarkus.platform:quarkus-bom:{strictly 3.33.2} -> 3.33.2
+|    +--- io.quarkus:quarkus-config-yaml:3.33.2 (c)
+|    +--- io.quarkus:quarkus-container-image-jib:3.33.2 (c)
+|    +--- io.quarkus:quarkus-hibernate-validator:3.33.2 (c)
+|    +--- io.quarkus:quarkus-logging-json:3.33.2 (c)
+|    +--- io.quarkus:quarkus-oidc:3.33.2 (c)
+|    +--- io.quarkus:quarkus-opentelemetry:3.33.2 (c)
+|    +--- io.quarkus:quarkus-rest-jackson:3.33.2 (c)
+|    +--- io.quarkus:quarkus-smallrye-fault-tolerance:3.33.2 (c)
+|    +--- io.quarkus:quarkus-smallrye-openapi:3.33.2 (c)
+|    +--- org.apache.commons:commons-lang3:3.20.0 (c)
+|    +--- org.mockito:mockito-core:5.21.0 (c)
+|    +--- io.quarkus:quarkus-rest:3.33.2 (c)
+|    +--- io.quarkus:quarkus-rest-jackson-common:3.33.2 (c)
+|    +--- io.smallrye:smallrye-open-api-core:4.2.4 (c)
+|    +--- io.quarkus:quarkus-core:3.33.2 (c)
+|    +--- io.quarkus:quarkus-vertx-http:3.33.2 (c)
+|    +--- io.quarkus:quarkus-arc:3.33.2 (c)
+|    +--- io.quarkus:quarkus-swagger-ui:3.33.2 (c)
+|    +--- io.quarkus:quarkus-vertx:3.33.2 (c)
+|    +--- io.quarkus:quarkus-security:3.33.2 (c)
+|    +--- io.quarkus:quarkus-jsonp:3.33.2 (c)
+|    +--- io.quarkus:quarkus-oidc-common:3.33.2 (c)
+|    +--- io.quarkus:quarkus-websockets-next-spi:3.33.2 (c)
+|    +--- io.quarkus:quarkus-devservices:3.33.2 (c)
+|    +--- io.smallrye:smallrye-jwt:4.6.3 (c)
+|    +--- jakarta.annotation:jakarta.annotation-api:3.0.0 (c)
+|    +--- io.smallrye.config:smallrye-config-source-yaml:3.16.0 (c)
+|    +--- org.eclipse.microprofile.config:microprofile-config-api:3.1 (c)
+|    +--- org.hibernate.validator:hibernate-validator:9.1.0.Final (c)
+|    +--- org.glassfish.expressly:expressly:6.0.0 (c)
+|    +--- io.smallrye.config:smallrye-config-validator:3.16.0 (c)
+|    +--- jakarta.ws.rs:jakarta.ws.rs-api:3.1.0 (c)
+|    +--- io.quarkus:quarkus-mutiny:3.33.2 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance:6.10.1 (c)
+|    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (c)
+|    +--- org.jboss.logging:commons-logging-jboss-logging:2.0.0.Final (c)
+|    +--- io.quarkus:quarkus-smallrye-context-propagation:3.33.2 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-context-propagation:6.10.1 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-mutiny:6.10.1 (c)
+|    +--- io.quarkus:quarkus-tls-registry:3.33.2 (c)
+|    +--- io.quarkus:quarkus-security-runtime-spi:3.33.2 (c)
+|    +--- io.quarkus:quarkus-grpc-common:3.33.2 (c)
+|    +--- io.smallrye.common:smallrye-common-vertx-context:2.16.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.57.0 (c)
+|    +--- io.opentelemetry.semconv:opentelemetry-semconv:1.37.0 (c)
+|    +--- io.opentelemetry.semconv:opentelemetry-semconv-incubating:1.37.0-alpha (c)
+|    +--- io.opentelemetry:opentelemetry-api-incubator:1.57.0-alpha (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.23.0 (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:2.23.0 (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations-support:2.23.0-alpha (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-incubator:2.23.0-alpha (c)
+|    +--- io.opentelemetry:opentelemetry-exporter-otlp-common:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-exporter-otlp:1.57.0 (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-runtime-telemetry-java17:2.23.0-alpha (c)
+|    +--- io.vertx:vertx-grpc-client:4.5.27 (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-jdbc:2.23.0-alpha (c)
+|    +--- org.jboss.logmanager:jboss-logmanager:3.2.1.Final (c)
+|    +--- io.quarkus:quarkus-micrometer:3.33.2 (c)
+|    +--- io.micrometer:micrometer-registry-stackdriver:1.16.3 (c)
+|    +--- io.quarkus:quarkus-container-image:3.33.2 (c)
+|    +--- com.google.code.gson:gson:2.13.2 (c)
+|    +--- org.slf4j:slf4j-api:2.0.17 (c)
+|    +--- net.bytebuddy:byte-buddy:1.17.8 (c)
+|    +--- net.bytebuddy:byte-buddy-agent:1.17.8 (c)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (c)
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.21.2 (c)
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.21.2 (c)
+|    +--- com.google.protobuf:protobuf-java:4.33.2 (c)
+|    +--- org.jspecify:jspecify:1.0.0 (c)
+|    +--- com.google.code.findbugs:jsr305:3.0.2 (c)
+|    +--- com.google.http-client:google-http-client:1.47.1 (c)
+|    +--- com.google.http-client:google-http-client-gson:1.47.1 (c)
+|    +--- com.google.guava:guava:33.5.0-jre (c)
+|    +--- com.google.errorprone:error_prone_annotations:2.47.0 (c)
+|    +--- io.quarkus:quarkus-rest-common:3.33.2 (c)
+|    +--- io.quarkus.resteasy.reactive:resteasy-reactive-vertx:3.33.2 (c)
+|    +--- io.quarkus:quarkus-virtual-threads:3.33.2 (c)
+|    +--- io.quarkus.resteasy.reactive:resteasy-reactive-jackson:3.33.2 (c)
+|    +--- io.quarkus:quarkus-jackson:3.33.2 (c)
+|    +--- org.eclipse.microprofile.openapi:microprofile-openapi-api:4.1.1 (c)
+|    +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (c)
+|    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.21.2 (c)
+|    +--- io.smallrye:jandex:3.5.3 (c)
+|    +--- io.smallrye.common:smallrye-common-classloader:2.16.0 (c)
+|    +--- org.jboss.logging:jboss-logging:3.6.2.Final (c)
+|    +--- jakarta.inject:jakarta.inject-api:2.0.1 (c)
+|    +--- io.smallrye.common:smallrye-common-os:2.16.0 (c)
+|    +--- io.quarkus:quarkus-ide-launcher:3.33.2 (c)
+|    +--- io.quarkus:quarkus-development-mode-spi:3.33.2 (c)
+|    +--- io.smallrye.config:smallrye-config:3.16.0 (c)
+|    +--- org.jboss.threads:jboss-threads:3.9.2 (c)
+|    +--- org.jboss.slf4j:slf4j-jboss-logmanager:2.0.2.Final (c)
+|    +--- org.wildfly.common:wildfly-common:2.0.1 (c)
+|    +--- io.quarkus:quarkus-value-registry:3.33.2 (c)
+|    +--- io.quarkus:quarkus-bootstrap-runner:3.33.2 (c)
+|    +--- io.quarkus:quarkus-fs-util:1.3.0 (c)
+|    +--- io.quarkus:quarkus-credentials:3.33.2 (c)
+|    +--- io.quarkus.security:quarkus-security:2.3.2 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web:3.21.6 (c)
+|    +--- io.vertx:vertx-web:4.5.27 (c)
+|    +--- org.crac:crac:1.5.0 (c)
+|    +--- com.aayushatharva.brotli4j:brotli4j:1.23.0 (c)
+|    +--- io.quarkus.arc:arc:3.33.2 (c)
+|    +--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:1.3 (c)
+|    +--- io.quarkus:quarkus-netty:3.33.2 (c)
+|    +--- io.netty:netty-codec-haproxy:4.1.133.Final (c)
+|    +--- io.smallrye.common:smallrye-common-annotation:2.16.0 (c)
+|    +--- io.quarkus:quarkus-vertx-latebound-mdc-provider:3.33.2 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-vertx:6.10.1 (c)
+|    +--- jakarta.interceptor:jakarta.interceptor-api:2.2.0 (c)
+|    +--- org.eclipse.parsson:parsson:1.1.7 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web-client:3.21.6 (c)
+|    +--- io.quarkus:quarkus-smallrye-jwt-build:3.33.2 (c)
+|    +--- io.quarkus:quarkus-proxy-registry:3.33.2 (c)
+|    +--- org.eclipse.microprofile.jwt:microprofile-jwt-auth-api:2.1 (c)
+|    +--- org.bitbucket.b_c:jose4j:0.9.6 (c)
+|    +--- io.smallrye:smallrye-jwt-common:4.6.3 (c)
+|    +--- org.yaml:snakeyaml:2.5 (c)
+|    +--- io.smallrye.config:smallrye-config-common:3.16.0 (c)
+|    +--- io.smallrye.config:smallrye-config-core:3.16.0 (c)
+|    +--- io.smallrye.common:smallrye-common-constraint:2.16.0 (c)
+|    +--- jakarta.validation:jakarta.validation-api:3.1.1 (c)
+|    +--- com.fasterxml:classmate:1.7.1 (c)
+|    +--- jakarta.el:jakarta.el-api:6.0.1 (c)
+|    +--- io.smallrye.reactive:mutiny:3.1.1 (c)
+|    +--- io.smallrye.reactive:mutiny-smallrye-context-propagation:3.1.1 (c)
+|    +--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.1.2 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-api:6.10.1 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-core:6.10.1 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-autoconfig-core:6.10.1 (c)
+|    +--- io.smallrye:smallrye-fault-tolerance-apiimpl:6.10.1 (c)
+|    +--- io.smallrye:smallrye-context-propagation:2.3.0 (c)
+|    +--- io.quarkus:quarkus-tls-registry-spi:3.33.2 (c)
+|    +--- io.smallrye.certs:smallrye-private-key-pem-parser:0.9.3 (c)
+|    +--- io.vertx:vertx-grpc:4.5.27 (c)
+|    +--- io.vertx:vertx-grpc-server:4.5.27 (c)
+|    +--- io.grpc:grpc-core:1.79.0 (c)
+|    +--- io.vertx:vertx-core:4.5.27 (c)
+|    +--- io.opentelemetry:opentelemetry-api:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk-common:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk-trace:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk-metrics:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-sdk-logs:1.57.0 (c)
+|    +--- io.opentelemetry:opentelemetry-exporter-common:1.57.0 (c)
+|    +--- io.vertx:vertx-grpc-common:4.5.27 (c)
+|    +--- io.grpc:grpc-stub:1.79.0 (c)
+|    +--- io.grpc:grpc-api:1.79.0 (c)
+|    +--- io.smallrye.common:smallrye-common-cpu:2.16.0 (c)
+|    +--- io.smallrye.common:smallrye-common-expression:2.16.0 (c)
+|    +--- io.smallrye.common:smallrye-common-net:2.16.0 (c)
+|    +--- io.smallrye.common:smallrye-common-ref:2.16.0 (c)
+|    +--- jakarta.json:jakarta.json-api:2.1.3 (c)
+|    +--- io.grpc:grpc-netty:1.79.0 (c)
+|    +--- org.graalvm.sdk:nativeimage:23.1.2 (c)
+|    +--- io.micrometer:micrometer-core:1.16.3 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.3.10 (c)
+|    +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+|    +--- javax.annotation:javax.annotation-api:1.3.2 (c)
+|    +--- com.google.j2objc:j2objc-annotations:2.8 (c)
+|    +--- org.apache.httpcomponents:httpclient:4.5.14 (c)
+|    +--- org.apache.httpcomponents:httpcore:4.4.16 (c)
+|    +--- io.grpc:grpc-context:1.79.0 (c)
+|    +--- io.grpc:grpc-protobuf:1.79.0 (c)
+|    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (c)
+|    +--- io.grpc:grpc-inprocess:1.79.0 (c)
+|    +--- io.grpc:grpc-alts:1.79.0 (c)
+|    +--- io.grpc:grpc-grpclb:1.79.0 (c)
+|    +--- io.grpc:grpc-auth:1.79.0 (c)
+|    +--- com.google.guava:failureaccess:1.0.1 (c)
+|    +--- com.google.protobuf:protobuf-java-util:4.33.2 (c)
+|    +--- io.opentelemetry:opentelemetry-context:1.57.0 (c)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-grpc-1.6:2.23.0-alpha (c)
+|    +--- commons-codec:commons-codec:1.21.0 (c)
+|    +--- com.google.http-client:google-http-client-apache-v2:1.47.1 (c)
+|    +--- com.google.http-client:google-http-client-appengine:1.47.1 (c)
+|    +--- io.netty:netty-buffer:4.1.133.Final (c)
+|    +--- io.netty:netty-common:4.1.133.Final (c)
+|    +--- io.quarkus.resteasy.reactive:resteasy-reactive-common:3.33.2 (c)
+|    +--- io.quarkus.resteasy.reactive:resteasy-reactive:3.33.2 (c)
+|    +--- io.quarkus.vertx.utils:quarkus-vertx-utils:3.33.2 (c)
+|    +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.5 (c)
+|    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.21.2 (c)
+|    +--- io.smallrye.common:smallrye-common-function:2.16.0 (c)
+|    +--- io.quarkus:quarkus-classloader-commons:3.33.2 (c)
+|    +--- io.smallrye.common:smallrye-common-io:2.16.0 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web-common:3.21.6 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-auth-common:3.21.6 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-bridge-common:3.21.6 (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-uri-template:3.21.6 (c)
+|    +--- io.vertx:vertx-web-common:4.5.27 (c)
+|    +--- io.vertx:vertx-auth-common:4.5.27 (c)
+|    +--- io.vertx:vertx-bridge-common:4.5.27 (c)
+|    +--- jakarta.transaction:jakarta.transaction-api:2.0.1 (c)
+|    +--- io.netty:netty-codec:4.1.133.Final (c)
+|    +--- io.netty:netty-codec-http:4.1.133.Final (c)
+|    +--- io.netty:netty-codec-http2:4.1.133.Final (c)
+|    +--- io.netty:netty-handler:4.1.133.Final (c)
+|    +--- io.netty:netty-transport:4.1.133.Final (c)
+|    +--- io.smallrye.reactive:smallrye-mutiny-vertx-runtime:3.21.6 (c)
+|    +--- io.smallrye.reactive:vertx-mutiny-generator:3.21.6 (c)
+|    +--- io.vertx:vertx-web-client:4.5.27 (c)
+|    +--- io.smallrye:smallrye-jwt-build:4.6.3 (c)
+|    +--- org.ow2.asm:asm:9.9.1 (c)
+|    +--- org.jctools:jctools-core:4.0.5 (c)
+|    +--- io.smallrye:smallrye-context-propagation-api:2.3.0 (c)
+|    +--- io.smallrye:smallrye-context-propagation-storage:2.3.0 (c)
+|    +--- io.netty:netty-handler-proxy:4.1.133.Final (c)
+|    +--- io.netty:netty-resolver:4.1.133.Final (c)
+|    +--- io.netty:netty-resolver-dns:4.1.133.Final (c)
+|    +--- io.micrometer:micrometer-commons:1.16.3 (c)
+|    +--- io.micrometer:micrometer-observation:1.16.3 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 (c)
+|    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.3.10 (c)
+|    +--- io.opentelemetry:opentelemetry-common:1.57.0 (c)
+|    +--- io.quarkus.resteasy.reactive:resteasy-reactive-common-types:3.33.2 (c)
+|    +--- org.reactivestreams:reactive-streams:1.0.4 (c)
+|    +--- io.smallrye.reactive:mutiny-zero-flow-adapters:1.1.1 (c)
+|    +--- jakarta.activation:jakarta.activation-api:2.1.4 (c)
+|    +--- io.vertx:vertx-uri-template:4.5.27 (c)
+|    +--- io.netty:netty-transport-native-unix-common:4.1.133.Final (c)
+|    +--- io.vertx:vertx-codegen:4.5.27 (c)
+|    +--- io.netty:netty-codec-socks:4.1.133.Final (c)
+|    +--- io.netty:netty-codec-dns:4.1.133.Final (c)
+|    +--- org.jetbrains:annotations:26.0.2 (c)
+|    \--- org.jetbrains.kotlin:kotlin-stdlib-common:2.3.10 (c)
++--- io.quarkus.platform:quarkus-google-cloud-services-bom:{strictly 3.33.2} -> 3.33.2
+|    +--- com.google.auth:google-auth-library-oauth2-http:1.42.1 (c)
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-bigquery:2.21.0 (c)
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-firestore:2.21.0 (c)
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common-grpc:2.21.0 (c)
+|    +--- com.google.code.gson:gson:2.13.2 (c)
+|    +--- com.google.api:api-common:2.57.1 (c)
+|    +--- com.google.protobuf:protobuf-java:4.33.2 (c)
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common:2.21.0 (c)
+|    +--- com.google.cloud:google-cloud-firestore:3.37.0 (c)
+|    +--- com.google.cloud:google-cloud-bigquery:2.59.0 (c)
+|    +--- com.google.api-client:google-api-client:2.7.2 (c)
+|    +--- com.google.auto.value:auto-value-annotations:1.11.0 (c)
+|    +--- com.google.auth:google-auth-library-credentials:1.42.1 (c)
+|    +--- com.google.http-client:google-http-client:1.47.1 (c)
+|    +--- com.google.http-client:google-http-client-gson:1.47.1 (c)
+|    +--- com.google.guava:guava:33.5.0-jre (c)
+|    +--- io.grpc:grpc-core:1.79.0 (c)
+|    +--- io.grpc:grpc-stub:1.79.0 (c)
+|    +--- io.grpc:grpc-api:1.79.0 (c)
+|    +--- com.google.api:gax-grpc:2.74.1 (c)
+|    +--- io.grpc:grpc-netty:1.79.0 (c)
+|    +--- org.graalvm.sdk:nativeimage:23.1.2 (c)
+|    +--- com.google.cloud:google-cloud-monitoring:3.86.0 (c)
+|    +--- com.github.luben:zstd-jni:1.5.7-7 (c)
+|    +--- com.google.cloud:google-cloud-core:2.64.1 (c)
+|    +--- com.google.cloud:google-cloud-core-grpc:2.64.1 (c)
+|    +--- io.grpc:grpc-context:1.79.0 (c)
+|    +--- io.opencensus:opencensus-contrib-http-util:0.31.1 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-firestore-v1:3.37.0 (c)
+|    +--- com.google.cloud:proto-google-cloud-firestore-bundle-v1:3.37.0 (c)
+|    +--- io.grpc:grpc-protobuf:1.79.0 (c)
+|    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (c)
+|    +--- com.google.api:gax:2.74.1 (c)
+|    +--- io.opencensus:opencensus-api:0.31.1 (c)
+|    +--- io.grpc:grpc-inprocess:1.79.0 (c)
+|    +--- io.grpc:grpc-alts:1.79.0 (c)
+|    +--- io.grpc:grpc-grpclb:1.79.0 (c)
+|    +--- org.conscrypt:conscrypt-openjdk-uber:2.5.2 (c)
+|    +--- io.grpc:grpc-auth:1.79.0 (c)
+|    +--- com.google.api:gax-httpjson:2.74.1 (c)
+|    +--- org.threeten:threetenbp:1.7.2 (c)
+|    +--- com.google.api.grpc:proto-google-iam-v1:1.60.1 (c)
+|    +--- com.google.protobuf:protobuf-java-util:4.33.2 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-monitoring-v3:3.86.0 (c)
+|    +--- com.google.cloud:google-cloud-core-http:2.64.1 (c)
+|    +--- com.google.oauth-client:google-oauth-client:1.39.0 (c)
+|    +--- com.google.http-client:google-http-client-apache-v2:1.47.1 (c)
+|    +--- com.google.http-client:google-http-client-appengine:1.47.1 (c)
+|    +--- com.google.cloud:google-cloud-bigquerystorage:3.21.0 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1beta:3.21.0 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1alpha:3.21.0 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1beta1:0.193.0 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1beta2:0.193.0 (c)
+|    +--- com.google.api.grpc:grpc-google-cloud-bigquerystorage-v1beta1:0.193.0 (c)
+|    +--- com.google.api.grpc:grpc-google-cloud-bigquerystorage-v1beta2:0.193.0 (c)
+|    +--- com.google.api.grpc:grpc-google-cloud-bigquerystorage-v1:3.21.0 (c)
+|    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1:3.21.0 (c)
+|    \--- org.codehaus.mojo:animal-sniffer-annotations:1.27 (c)
++--- io.quarkus:quarkus-rest-jackson -> 3.33.2
+|    +--- io.quarkus:quarkus-rest:3.33.2
+|    |    +--- io.quarkus:quarkus-rest-common:3.33.2
+|    |    |    +--- io.quarkus.resteasy.reactive:resteasy-reactive-common:3.33.2
+|    |    |    |    +--- io.quarkus.resteasy.reactive:resteasy-reactive-common-types:3.33.2
+|    |    |    |    |    \--- jakarta.ws.rs:jakarta.ws.rs-api:3.1.0
+|    |    |    |    +--- io.smallrye.reactive:mutiny:3.1.1
+|    |    |    |    |    +--- io.smallrye.common:smallrye-common-annotation:2.16.0
+|    |    |    |    |    \--- org.jctools:jctools-core:4.0.5
+|    |    |    |    +--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    +--- io.smallrye.reactive:mutiny-zero-flow-adapters:1.1.1
+|    |    |    |    |    \--- org.reactivestreams:reactive-streams:1.0.4
+|    |    |    |    +--- io.smallrye.common:smallrye-common-annotation:2.16.0
+|    |    |    |    +--- org.eclipse.parsson:parsson:1.1.7
+|    |    |    |    |    \--- jakarta.json:jakarta.json-api:2.1.3
+|    |    |    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0
+|    |    |    |    |    +--- jakarta.enterprise:jakarta.enterprise.lang-model:4.1.0
+|    |    |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    |    |    +--- jakarta.el:jakarta.el-api:6.0.0 -> 6.0.1
+|    |    |    |    |    +--- jakarta.interceptor:jakarta.interceptor-api:2.2.0
+|    |    |    |    |    |    \--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    |    |    \--- jakarta.inject:jakarta.inject-api:2.0.1
+|    |    |    |    +--- jakarta.ws.rs:jakarta.ws.rs-api:3.1.0
+|    |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    +--- io.quarkus:quarkus-mutiny:3.33.2
+|    |    |    |    +--- io.quarkus:quarkus-core:3.33.2
+|    |    |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    |    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    |    |    |    |    +--- jakarta.inject:jakarta.inject-api:2.0.1
+|    |    |    |    |    +--- io.smallrye.common:smallrye-common-os:2.16.0
+|    |    |    |    |    +--- io.quarkus:quarkus-ide-launcher:3.33.2
+|    |    |    |    |    +--- io.quarkus:quarkus-development-mode-spi:3.33.2
+|    |    |    |    |    |    +--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    |    |    |    \--- io.smallrye.common:smallrye-common-os:2.16.0
+|    |    |    |    |    +--- io.smallrye.config:smallrye-config:3.16.0
+|    |    |    |    |    |    +--- io.smallrye.config:smallrye-config-core:3.16.0
+|    |    |    |    |    |    |    +--- org.eclipse.microprofile.config:microprofile-config-api:3.1.1-RC1 -> 3.1
+|    |    |    |    |    |    |    +--- jakarta.annotation:jakarta.annotation-api:2.1.1 -> 3.0.0
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-annotation:2.15.0 -> 2.16.0
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-expression:2.15.0 -> 2.16.0
+|    |    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-function:2.16.0
+|    |    |    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-constraint:2.16.0
+|    |    |    |    |    |    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.0.Final -> 3.6.2.Final
+|    |    |    |    |    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.0.Final -> 3.6.2.Final
+|    |    |    |    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.0.Final -> 3.6.2.Final
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-constraint:2.15.0 -> 2.16.0 (*)
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-classloader:2.15.0 -> 2.16.0
+|    |    |    |    |    |    |    +--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    |    |    |    |    +--- org.ow2.asm:asm:9.9.1
+|    |    |    |    |    |    |    \--- io.smallrye.config:smallrye-config-common:3.16.0
+|    |    |    |    |    |    |         +--- org.eclipse.microprofile.config:microprofile-config-api:3.1.1-RC1 -> 3.1
+|    |    |    |    |    |    |         +--- io.smallrye.common:smallrye-common-classloader:2.15.0 -> 2.16.0
+|    |    |    |    |    |    |         \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    |    |    +--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    |    |    +--- org.jboss.logmanager:jboss-logmanager:3.2.1.Final
+|    |    |    |    |    |    +--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-constraint:2.15.0 -> 2.16.0 (*)
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-cpu:2.15.0 -> 2.16.0
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-expression:2.15.0 -> 2.16.0 (*)
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-net:2.15.0 -> 2.16.0
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-constraint:2.16.0 (*)
+|    |    |    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.0.Final -> 3.6.2.Final
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-os:2.15.0 -> 2.16.0
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-ref:2.15.0 -> 2.16.0
+|    |    |    |    |    |    |    \--- io.smallrye.common:smallrye-common-constraint:2.16.0 (*)
+|    |    |    |    |    |    +--- jakarta.json:jakarta.json-api:2.1.3
+|    |    |    |    |    |    \--- org.eclipse.parsson:parsson:1.1.7 (*)
+|    |    |    |    |    +--- org.jboss.threads:jboss-threads:3.9.2
+|    |    |    |    |    |    +--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    |    |    |    +--- org.wildfly.common:wildfly-common:2.0.1
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-cpu:2.4.0 -> 2.16.0
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-expression:2.4.0 -> 2.16.0 (*)
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-net:2.4.0 -> 2.16.0 (*)
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-os:2.4.0 -> 2.16.0
+|    |    |    |    |    |    |    \--- io.smallrye.common:smallrye-common-ref:2.4.0 -> 2.16.0 (*)
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-annotation:2.14.0 -> 2.16.0
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-constraint:2.14.0 -> 2.16.0 (*)
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-cpu:2.14.0 -> 2.16.0
+|    |    |    |    |    |    \--- io.smallrye.common:smallrye-common-function:2.14.0 -> 2.16.0 (*)
+|    |    |    |    |    +--- org.slf4j:slf4j-api:2.0.17
+|    |    |    |    |    +--- org.jboss.slf4j:slf4j-jboss-logmanager:2.0.2.Final
+|    |    |    |    |    +--- org.wildfly.common:wildfly-common:2.0.1 (*)
+|    |    |    |    |    +--- io.quarkus:quarkus-value-registry:3.33.2
+|    |    |    |    |    +--- io.quarkus:quarkus-bootstrap-runner:3.33.2
+|    |    |    |    |    |    +--- io.quarkus:quarkus-classloader-commons:3.33.2
+|    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-io:2.16.0
+|    |    |    |    |    |    |    +--- io.smallrye.common:smallrye-common-constraint:2.16.0 (*)
+|    |    |    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.0.Final -> 3.6.2.Final
+|    |    |    |    |    |    +--- org.jboss.logmanager:jboss-logmanager:3.2.1.Final (*)
+|    |    |    |    |    |    +--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    |    |    |    \--- org.crac:crac:1.5.0
+|    |    |    |    |    \--- io.quarkus:quarkus-fs-util:1.3.0
+|    |    |    |    +--- io.smallrye.reactive:mutiny:3.1.1 (*)
+|    |    |    |    +--- io.quarkus:quarkus-smallrye-context-propagation:3.33.2
+|    |    |    |    |    +--- io.smallrye:smallrye-context-propagation:2.3.0
+|    |    |    |    |    |    +--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:1.3
+|    |    |    |    |    |    +--- org.eclipse.microprofile.config:microprofile-config-api:3.0.2 -> 3.1
+|    |    |    |    |    |    +--- io.smallrye:smallrye-context-propagation-api:2.3.0
+|    |    |    |    |    |    |    \--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:1.3
+|    |    |    |    |    |    +--- io.smallrye:smallrye-context-propagation-storage:2.3.0
+|    |    |    |    |    |    \--- org.jboss.threads:jboss-threads:3.5.0.Final -> 3.9.2 (*)
+|    |    |    |    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    |    |    |    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    |    |    \--- io.quarkus:quarkus-arc:3.33.2
+|    |    |    |    |         +--- io.quarkus.arc:arc:3.33.2
+|    |    |    |    |         |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    |    |    |    |         |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    |    |         |    +--- jakarta.transaction:jakarta.transaction-api:2.0.1
+|    |    |    |    |         |    +--- io.smallrye.reactive:mutiny:3.1.1 (*)
+|    |    |    |    |         |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    |    |         +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    |    |         \--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:1.3
+|    |    |    |    \--- io.smallrye.reactive:mutiny-smallrye-context-propagation:3.1.1
+|    |    |    |         +--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:1.3
+|    |    |    |         +--- io.smallrye.reactive:mutiny:3.1.1 (*)
+|    |    |    |         \--- io.smallrye:smallrye-context-propagation:2.3.0 (*)
+|    |    |    +--- io.quarkus:quarkus-vertx:3.33.2
+|    |    |    |    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    |    |    +--- io.quarkus:quarkus-netty:3.33.2
+|    |    |    |    |    +--- io.netty:netty-codec:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final
+|    |    |    |    |    |    |    \--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    \--- io.netty:netty-transport:4.1.133.Final
+|    |    |    |    |    |         +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |         +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |         \--- io.netty:netty-resolver:4.1.133.Final
+|    |    |    |    |    |              \--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    +--- io.netty:netty-codec-http:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    |    \--- io.netty:netty-handler:4.1.133.Final
+|    |    |    |    |    |         +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |         +--- io.netty:netty-resolver:4.1.133.Final (*)
+|    |    |    |    |    |         +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |         +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |         +--- io.netty:netty-transport-native-unix-common:4.1.133.Final
+|    |    |    |    |    |         |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |         |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |         |    \--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |         \--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    +--- io.netty:netty-codec-http2:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-handler:4.1.133.Final (*)
+|    |    |    |    |    |    \--- io.netty:netty-codec-http:4.1.133.Final (*)
+|    |    |    |    |    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    |    |    |    +--- io.netty:netty-handler:4.1.133.Final (*)
+|    |    |    |    |    \--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    |    |    |    +--- io.netty:netty-codec-haproxy:4.1.133.Final
+|    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    \--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    +--- io.smallrye.common:smallrye-common-annotation:2.16.0
+|    |    |    |    +--- io.smallrye.common:smallrye-common-vertx-context:2.16.0
+|    |    |    |    |    +--- io.vertx:vertx-core:4.5.24 -> 4.5.27
+|    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-handler:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-handler-proxy:4.1.133.Final
+|    |    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-codec-socks:4.1.133.Final
+|    |    |    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    |    |    \--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    |    |    \--- io.netty:netty-codec-http:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-codec-http:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-codec-http2:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-resolver:4.1.133.Final (*)
+|    |    |    |    |    |    +--- io.netty:netty-resolver-dns:4.1.133.Final
+|    |    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-resolver:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    |    |    +--- io.netty:netty-codec-dns:4.1.133.Final
+|    |    |    |    |    |    |    |    +--- io.netty:netty-common:4.1.133.Final
+|    |    |    |    |    |    |    |    +--- io.netty:netty-buffer:4.1.133.Final (*)
+|    |    |    |    |    |    |    |    +--- io.netty:netty-transport:4.1.133.Final (*)
+|    |    |    |    |    |    |    |    \--- io.netty:netty-codec:4.1.133.Final (*)
+|    |    |    |    |    |    |    \--- io.netty:netty-handler:4.1.133.Final (*)
+|    |    |    |    |    |    \--- com.fasterxml.jackson.core:jackson-core:2.18.6 -> 2.21.2
+|    |    |    |    |    |         \--- com.fasterxml.jackson:jackson-bom:2.21.2
+|    |    |    |    |    |              +--- com.fasterxml.jackson.core:jackson-annotations:2.21 (c)
+|    |    |    |    |    |              +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (c)
+|    |    |    |    |    |              +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (c)
+|    |    |    |    |    |              +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.21.2 (c)
+|    |    |    |    |    |              +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.21.2 (c)
+|    |    |    |    |    |              +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.21.2 (c)
+|    |    |    |    |    |              \--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.21.2 (c)
+|    |    |    |    |    \--- io.smallrye.common:smallrye-common-constraint:2.16.0 (*)
+|    |    |    |    +--- io.quarkus:quarkus-mutiny:3.33.2 (*)
+|    |    |    |    +--- io.quarkus:quarkus-virtual-threads:3.33.2
+|    |    |    |    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    |    |    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    |    |    |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    |    +--- io.quarkus:quarkus-vertx-latebound-mdc-provider:3.33.2
+|    |    |    |    |    \--- org.jboss.logmanager:jboss-logmanager:3.2.1.Final (*)
+|    |    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6
+|    |    |    |    |    +--- io.smallrye.reactive:mutiny:3.1.1 (*)
+|    |    |    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-runtime:3.21.6
+|    |    |    |    |    |    +--- io.smallrye.reactive:mutiny:3.1.1 (*)
+|    |    |    |    |    |    \--- io.vertx:vertx-core:4.5.26 -> 4.5.27 (*)
+|    |    |    |    |    +--- io.vertx:vertx-core:4.5.26 -> 4.5.27 (*)
+|    |    |    |    |    \--- io.smallrye.reactive:vertx-mutiny-generator:3.21.6
+|    |    |    |    |         +--- io.smallrye.reactive:smallrye-mutiny-vertx-runtime:3.21.6 (*)
+|    |    |    |    |         +--- io.vertx:vertx-codegen:4.5.26 -> 4.5.27
+|    |    |    |    |         |    \--- com.fasterxml.jackson.core:jackson-core:2.18.6 -> 2.21.2 (*)
+|    |    |    |    |         \--- io.smallrye.common:smallrye-common-annotation:2.17.0 -> 2.16.0
+|    |    |    |    +--- io.smallrye:smallrye-fault-tolerance-vertx:6.10.1
+|    |    |    |    \--- io.quarkus:quarkus-security-runtime-spi:3.33.2
+|    |    |    |         +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    |         \--- io.quarkus.security:quarkus-security:2.3.2
+|    |    |    |              +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1 -> 4.1.0 (*)
+|    |    |    |              +--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    |              \--- io.smallrye.reactive:mutiny:3.1.0 -> 3.1.1 (*)
+|    |    |    \--- io.quarkus:quarkus-jsonp:3.33.2
+|    |    |         +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |         \--- org.eclipse.parsson:parsson:1.1.7 (*)
+|    |    +--- io.quarkus.resteasy.reactive:resteasy-reactive-vertx:3.33.2
+|    |    |    +--- io.vertx:vertx-web:4.5.27
+|    |    |    |    +--- io.vertx:vertx-web-common:4.5.27
+|    |    |    |    |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    |    +--- io.vertx:vertx-auth-common:4.5.27
+|    |    |    |    |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    |    +--- io.vertx:vertx-bridge-common:4.5.27
+|    |    |    |    |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    +--- io.quarkus.resteasy.reactive:resteasy-reactive:3.33.2
+|    |    |    |    +--- io.quarkus.resteasy.reactive:resteasy-reactive-common:3.33.2 (*)
+|    |    |    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    |    |    |    +--- jakarta.ws.rs:jakarta.ws.rs-api:3.1.0
+|    |    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    +--- io.quarkus.vertx.utils:quarkus-vertx-utils:3.33.2
+|    |    |    |    +--- io.vertx:vertx-web:4.5.27 (*)
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    |    |    +--- jakarta.ws.rs:jakarta.ws.rs-api:3.1.0
+|    |    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    |    +--- org.jboss.logging:commons-logging-jboss-logging:2.0.0.Final
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    |    +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.5
+|    |    |    |    \--- jakarta.activation:jakarta.activation-api:2.1.4
+|    |    |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|    |    +--- io.quarkus:quarkus-vertx-http:3.33.2
+|    |    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    +--- io.quarkus:quarkus-security-runtime-spi:3.33.2 (*)
+|    |    |    +--- io.quarkus:quarkus-tls-registry:3.33.2
+|    |    |    |    +--- io.quarkus:quarkus-tls-registry-spi:3.33.2
+|    |    |    |    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    |    |    +--- io.quarkus.arc:arc:3.33.2 (*)
+|    |    |    |    |    \--- io.quarkus:quarkus-vertx:3.33.2 (*)
+|    |    |    |    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    |    |    +--- io.quarkus:quarkus-credentials:3.33.2
+|    |    |    |    |    \--- io.quarkus.arc:arc:3.33.2 (*)
+|    |    |    |    \--- io.smallrye.certs:smallrye-private-key-pem-parser:0.9.3
+|    |    |    |         +--- io.smallrye.common:smallrye-common-constraint:2.17.1 -> 2.16.0 (*)
+|    |    |    |         \--- io.vertx:vertx-core:4.5.11 -> 4.5.27 (*)
+|    |    |    +--- io.quarkus:quarkus-credentials:3.33.2 (*)
+|    |    |    +--- io.quarkus:quarkus-mutiny:3.33.2 (*)
+|    |    |    +--- io.smallrye.common:smallrye-common-vertx-context:2.16.0 (*)
+|    |    |    +--- io.quarkus.security:quarkus-security:2.3.2 (*)
+|    |    |    +--- io.quarkus:quarkus-vertx:3.33.2 (*)
+|    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web:3.21.6
+|    |    |    |    +--- io.vertx:vertx-web:4.5.26 -> 4.5.27 (*)
+|    |    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web-common:3.21.6
+|    |    |    |    |    +--- io.vertx:vertx-web-common:4.5.26 -> 4.5.27 (*)
+|    |    |    |    |    \--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-auth-common:3.21.6
+|    |    |    |    |    +--- io.vertx:vertx-auth-common:4.5.26 -> 4.5.27 (*)
+|    |    |    |    |    \--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-bridge-common:3.21.6
+|    |    |    |    |    +--- io.vertx:vertx-bridge-common:4.5.26 -> 4.5.27 (*)
+|    |    |    |    |    \--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    |    \--- io.smallrye.reactive:smallrye-mutiny-vertx-uri-template:3.21.6
+|    |    |    |         +--- io.vertx:vertx-uri-template:4.5.26 -> 4.5.27
+|    |    |    |         |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    |         \--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    +--- io.vertx:vertx-web:4.5.27 (*)
+|    |    |    +--- org.crac:crac:1.5.0
+|    |    |    \--- com.aayushatharva.brotli4j:brotli4j:1.23.0
+|    |    |         \--- com.aayushatharva.brotli4j:service:1.23.0
+|    |    +--- io.quarkus:quarkus-jsonp:3.33.2 (*)
+|    |    \--- io.quarkus:quarkus-virtual-threads:3.33.2 (*)
+|    \--- io.quarkus:quarkus-rest-jackson-common:3.33.2
+|         +--- io.quarkus:quarkus-rest-common:3.33.2 (*)
+|         +--- io.quarkus.resteasy.reactive:resteasy-reactive-jackson:3.33.2
+|         |    +--- io.quarkus.resteasy.reactive:resteasy-reactive:3.33.2 (*)
+|         |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2
+|         |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+|         |    |    +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (*)
+|         |    |    \--- com.fasterxml.jackson:jackson-bom:2.21.2 (*)
+|         |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|         |    +--- org.jboss.logging:commons-logging-jboss-logging:2.0.0.Final (*)
+|         |    +--- jakarta.xml.bind:jakarta.xml.bind-api:4.0.5 (*)
+|         |    \--- org.jboss.logging:jboss-logging:3.6.2.Final
+|         +--- io.quarkus:quarkus-jackson:3.33.2
+|         |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (*)
+|         |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.21.2
+|         |    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.21
+|         |    |    +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (*)
+|         |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (*)
+|         |    |    \--- com.fasterxml.jackson:jackson-bom:2.21.2 (*)
+|         |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.21.2
+|         |    |    +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (*)
+|         |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (*)
+|         |    |    \--- com.fasterxml.jackson:jackson-bom:2.21.2 (*)
+|         |    +--- com.fasterxml.jackson.module:jackson-module-parameter-names:2.21.2
+|         |    |    +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (*)
+|         |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (*)
+|         |    |    \--- com.fasterxml.jackson:jackson-bom:2.21.2 (*)
+|         |    \--- io.quarkus:quarkus-arc:3.33.2 (*)
+|         \--- io.quarkus:quarkus-jsonp:3.33.2 (*)
++--- io.quarkus:quarkus-smallrye-openapi -> 3.33.2
+|    +--- io.smallrye:smallrye-open-api-core:4.2.4
+|    |    +--- org.eclipse.microprofile.openapi:microprofile-openapi-api:4.1.1
+|    |    +--- org.eclipse.microprofile.config:microprofile-config-api:3.0.3 -> 3.1
+|    |    +--- io.smallrye:smallrye-open-api-model:4.2.4
+|    |    |    +--- org.eclipse.microprofile.openapi:microprofile-openapi-api:4.1.1
+|    |    |    +--- io.smallrye:jandex:3.5.3
+|    |    |    \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.21.0 -> 2.21.2 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.0 -> 2.21.2 (*)
+|    |    +--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.21.0 -> 2.21.2
+|    |    |    +--- com.fasterxml.jackson.core:jackson-databind:2.21.2 (*)
+|    |    |    +--- org.yaml:snakeyaml:2.5
+|    |    |    +--- com.fasterxml.jackson.core:jackson-core:2.21.2 (*)
+|    |    |    \--- com.fasterxml.jackson:jackson-bom:2.21.2 (*)
+|    |    +--- io.smallrye:jandex:3.5.3
+|    |    +--- io.smallrye.common:smallrye-common-classloader:2.15.0 -> 2.16.0
+|    |    \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    +--- io.quarkus:quarkus-vertx-http:3.33.2 (*)
+|    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    \--- io.quarkus:quarkus-swagger-ui:3.33.2
+|         +--- io.quarkus:quarkus-core:3.33.2 (*)
+|         +--- io.quarkus:quarkus-vertx-http:3.33.2 (*)
+|         \--- io.quarkus:quarkus-arc:3.33.2 (*)
++--- io.quarkus:quarkus-oidc -> 3.33.2
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    +--- io.quarkus:quarkus-vertx:3.33.2 (*)
+|    +--- io.quarkus:quarkus-vertx-http:3.33.2 (*)
+|    +--- io.quarkus:quarkus-security:3.33.2
+|    |    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-security-runtime-spi:3.33.2 (*)
+|    |    +--- jakarta.interceptor:jakarta.interceptor-api:2.2.0 (*)
+|    |    +--- io.quarkus.security:quarkus-security:2.3.2 (*)
+|    |    \--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    +--- io.quarkus:quarkus-jsonp:3.33.2 (*)
+|    +--- io.quarkus:quarkus-oidc-common:3.33.2
+|    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-tls-registry:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-vertx:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-mutiny:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-credentials:3.33.2 (*)
+|    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web-client:3.21.6
+|    |    |    +--- io.vertx:vertx-web-client:4.5.26 -> 4.5.27
+|    |    |    |    +--- io.vertx:vertx-uri-template:4.5.27 (*)
+|    |    |    |    +--- io.vertx:vertx-web-common:4.5.27 (*)
+|    |    |    |    +--- io.vertx:vertx-auth-common:4.5.27 (*)
+|    |    |    |    \--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-core:3.21.6 (*)
+|    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-auth-common:3.21.6 (*)
+|    |    |    +--- io.smallrye.reactive:smallrye-mutiny-vertx-web-common:3.21.6 (*)
+|    |    |    \--- io.smallrye.reactive:smallrye-mutiny-vertx-uri-template:3.21.6 (*)
+|    |    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    |    +--- io.quarkus:quarkus-smallrye-jwt-build:3.33.2
+|    |    |    +--- io.smallrye:smallrye-jwt-build:4.6.3
+|    |    |    |    +--- org.eclipse.microprofile.config:microprofile-config-api:3.0 -> 3.1
+|    |    |    |    +--- org.eclipse.microprofile.jwt:microprofile-jwt-auth-api:2.1
+|    |    |    |    +--- org.bitbucket.b_c:jose4j:0.9.6
+|    |    |    |    |    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.17
+|    |    |    |    +--- io.smallrye:smallrye-jwt-common:4.6.3
+|    |    |    |    |    +--- org.bitbucket.b_c:jose4j:0.9.6 (*)
+|    |    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    |    \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    |    +--- io.quarkus:quarkus-jsonp:3.33.2 (*)
+|    |    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    |    \--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    \--- io.quarkus:quarkus-proxy-registry:3.33.2
+|    |         +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |         +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |         \--- io.quarkus:quarkus-credentials:3.33.2 (*)
+|    +--- io.quarkus:quarkus-websockets-next-spi:3.33.2
+|    |    \--- io.quarkus.security:quarkus-security:2.3.2 (*)
+|    +--- io.quarkus:quarkus-devservices:3.33.2
+|    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    \--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    +--- io.smallrye:smallrye-jwt:4.6.3
+|    |    +--- org.eclipse.microprofile.config:microprofile-config-api:3.0 -> 3.1
+|    |    +--- org.eclipse.microprofile.jwt:microprofile-jwt-auth-api:2.1
+|    |    +--- org.bitbucket.b_c:jose4j:0.9.6 (*)
+|    |    \--- io.smallrye:smallrye-jwt-common:4.6.3 (*)
+|    \--- jakarta.annotation:jakarta.annotation-api:3.0.0
++--- io.quarkus:quarkus-config-yaml -> 3.33.2
+|    +--- io.smallrye.config:smallrye-config-source-yaml:3.16.0
+|    |    +--- org.yaml:snakeyaml:2.5
+|    |    +--- io.smallrye.config:smallrye-config-common:3.16.0 (*)
+|    |    +--- io.smallrye.config:smallrye-config-core:3.16.0 (*)
+|    |    \--- io.smallrye.common:smallrye-common-constraint:2.15.0 -> 2.16.0 (*)
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    \--- org.eclipse.microprofile.config:microprofile-config-api:3.1
++--- io.quarkus:quarkus-hibernate-validator -> 3.33.2
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    +--- org.hibernate.validator:hibernate-validator:9.1.0.Final
+|    |    +--- jakarta.validation:jakarta.validation-api:3.1.1
+|    |    +--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    \--- com.fasterxml:classmate:1.7.1
+|    +--- org.glassfish.expressly:expressly:6.0.0
+|    |    \--- jakarta.el:jakarta.el-api:6.0.1
+|    +--- io.smallrye.config:smallrye-config-validator:3.16.0
+|    |    \--- io.smallrye.config:smallrye-config:3.16.0 (*)
+|    \--- jakarta.ws.rs:jakarta.ws.rs-api:3.1.0
++--- io.quarkus:quarkus-smallrye-fault-tolerance -> 3.33.2
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    +--- io.quarkus:quarkus-mutiny:3.33.2 (*)
+|    +--- io.smallrye:smallrye-fault-tolerance:6.10.1
+|    |    +--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.1.2
+|    |    +--- io.smallrye:smallrye-fault-tolerance-api:6.10.1
+|    |    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1 -> 4.1.0 (*)
+|    |    |    +--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.1.2
+|    |    |    \--- io.smallrye.common:smallrye-common-annotation:2.8.0 -> 2.16.0
+|    |    +--- io.smallrye:smallrye-fault-tolerance-core:6.10.1
+|    |    |    +--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.1.2
+|    |    |    +--- io.smallrye:smallrye-fault-tolerance-api:6.10.1 (*)
+|    |    |    \--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    +--- io.smallrye:smallrye-fault-tolerance-autoconfig-core:6.10.1
+|    |    |    +--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.1.2
+|    |    |    \--- io.smallrye:smallrye-fault-tolerance-api:6.10.1 (*)
+|    |    +--- io.smallrye:smallrye-fault-tolerance-apiimpl:6.10.1
+|    |    |    +--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:4.1.2
+|    |    |    +--- io.smallrye:smallrye-fault-tolerance-api:6.10.1 (*)
+|    |    |    +--- io.smallrye:smallrye-fault-tolerance-core:6.10.1 (*)
+|    |    |    \--- io.smallrye:smallrye-fault-tolerance-autoconfig-core:6.10.1 (*)
+|    |    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.0.1 -> 4.1.0 (*)
+|    |    +--- org.jboss.logging:jboss-logging:3.6.1.Final -> 3.6.2.Final
+|    |    \--- org.eclipse.microprofile.config:microprofile-config-api:3.1
+|    +--- jakarta.enterprise:jakarta.enterprise.cdi-api:4.1.0 (*)
+|    +--- jakarta.annotation:jakarta.annotation-api:3.0.0
+|    +--- org.jboss.logging:commons-logging-jboss-logging:2.0.0.Final (*)
+|    +--- io.quarkus:quarkus-smallrye-context-propagation:3.33.2 (*)
+|    +--- io.smallrye:smallrye-fault-tolerance-context-propagation:6.10.1
+|    |    +--- io.smallrye:smallrye-fault-tolerance:6.10.1 (*)
+|    |    \--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:1.3
+|    \--- io.smallrye:smallrye-fault-tolerance-mutiny:6.10.1
+|         +--- io.smallrye:smallrye-fault-tolerance-api:6.10.1 (*)
+|         +--- io.smallrye:smallrye-fault-tolerance-core:6.10.1 (*)
+|         \--- io.smallrye.reactive:mutiny:2.7.0 -> 3.1.1 (*)
++--- io.quarkus:quarkus-opentelemetry -> 3.33.2
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    +--- io.quarkus:quarkus-tls-registry:3.33.2 (*)
+|    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    +--- io.quarkus:quarkus-vertx:3.33.2 (*)
+|    +--- io.quarkus:quarkus-security-runtime-spi:3.33.2 (*)
+|    +--- io.quarkus:quarkus-grpc-common:3.33.2
+|    |    +--- io.vertx:vertx-grpc:4.5.27
+|    |    |    +--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    +--- io.grpc:grpc-netty:1.65.0 -> 1.79.0
+|    |    |    |    +--- io.grpc:grpc-api:1.79.0
+|    |    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    |    \--- com.google.errorprone:error_prone_annotations:2.45.0 -> 2.47.0
+|    |    |    |    \--- io.netty:netty-codec-http2:4.1.130.Final -> 4.1.133.Final (*)
+|    |    |    +--- io.grpc:grpc-protobuf:1.65.0 -> 1.79.0
+|    |    |    |    +--- io.grpc:grpc-api:1.79.0 (*)
+|    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    +--- com.google.protobuf:protobuf-java:3.25.8 -> 4.33.2
+|    |    |    |    \--- com.google.api.grpc:proto-google-common-protos:2.63.2 -> 2.65.1
+|    |    |    |         \--- com.google.protobuf:protobuf-java:4.33.2
+|    |    |    +--- io.grpc:grpc-stub:1.65.0 -> 1.79.0
+|    |    |    |    +--- io.grpc:grpc-api:1.79.0 (*)
+|    |    |    |    +--- org.codehaus.mojo:animal-sniffer-annotations:1.26 -> 1.27
+|    |    |    |    \--- com.google.guava:guava:33.5.0-android -> 33.5.0-jre
+|    |    |    |         +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|    |    |    |         +--- org.jspecify:jspecify:1.0.0
+|    |    |    |         +--- com.google.errorprone:error_prone_annotations:2.41.0 -> 2.47.0
+|    |    |    |         \--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|    |    |    \--- com.google.guava:guava:32.1.2-jre -> 33.5.0-jre (*)
+|    |    +--- io.vertx:vertx-grpc-server:4.5.27
+|    |    |    +--- io.vertx:vertx-grpc-common:4.5.27
+|    |    |    |    +--- io.vertx:vertx-core:4.5.27 (*)
+|    |    |    |    +--- io.grpc:grpc-protobuf:1.65.0 -> 1.79.0 (*)
+|    |    |    |    +--- io.grpc:grpc-api:1.65.0 -> 1.79.0 (*)
+|    |    |    |    \--- com.google.guava:guava:32.1.2-jre -> 33.5.0-jre (*)
+|    |    |    \--- io.grpc:grpc-stub:1.65.0 -> 1.79.0 (*)
+|    |    +--- io.vertx:vertx-grpc-client:4.5.27
+|    |    |    +--- io.vertx:vertx-grpc-common:4.5.27 (*)
+|    |    |    +--- io.grpc:grpc-stub:1.65.0 -> 1.79.0 (*)
+|    |    |    \--- io.grpc:grpc-api:1.65.0 -> 1.79.0 (*)
+|    |    +--- io.quarkus:quarkus-vertx:3.33.2 (*)
+|    |    \--- io.grpc:grpc-core:1.79.0
+|    |         \--- io.grpc:grpc-api:1.79.0 (*)
+|    +--- io.smallrye.common:smallrye-common-vertx-context:2.16.0 (*)
+|    +--- io.quarkus:quarkus-websockets-next-spi:3.33.2 (*)
+|    +--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:1.57.0
+|    |    +--- io.opentelemetry:opentelemetry-sdk:1.57.0
+|    |    |    +--- io.opentelemetry:opentelemetry-api:1.57.0
+|    |    |    |    \--- io.opentelemetry:opentelemetry-context:1.57.0
+|    |    |    |         \--- io.opentelemetry:opentelemetry-common:1.57.0
+|    |    |    +--- io.opentelemetry:opentelemetry-sdk-common:1.57.0
+|    |    |    |    \--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    |    |    +--- io.opentelemetry:opentelemetry-sdk-trace:1.57.0
+|    |    |    |    +--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    |    |    |    \--- io.opentelemetry:opentelemetry-sdk-common:1.57.0 (*)
+|    |    |    +--- io.opentelemetry:opentelemetry-sdk-metrics:1.57.0
+|    |    |    |    +--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    |    |    |    \--- io.opentelemetry:opentelemetry-sdk-common:1.57.0 (*)
+|    |    |    \--- io.opentelemetry:opentelemetry-sdk-logs:1.57.0
+|    |    |         +--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    |    |         \--- io.opentelemetry:opentelemetry-sdk-common:1.57.0 (*)
+|    |    \--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.57.0
+|    |         \--- io.opentelemetry:opentelemetry-sdk:1.57.0 (*)
+|    +--- io.opentelemetry:opentelemetry-sdk:1.57.0 (*)
+|    +--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.57.0 (*)
+|    +--- io.opentelemetry.semconv:opentelemetry-semconv:1.37.0
+|    +--- io.opentelemetry.semconv:opentelemetry-semconv-incubating:1.37.0-alpha
+|    |    \--- io.opentelemetry.semconv:opentelemetry-semconv:1.37.0
+|    +--- io.opentelemetry:opentelemetry-api-incubator:1.57.0-alpha
+|    |    \--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.23.0
+|    |    \--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:2.23.0
+|    |    \--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations-support:2.23.0-alpha
+|    |    +--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    |    +--- io.opentelemetry.semconv:opentelemetry-semconv:1.37.0
+|    |    \--- io.opentelemetry.semconv:opentelemetry-semconv-incubating:1.37.0-alpha (*)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-incubator:2.23.0-alpha
+|    |    +--- io.opentelemetry.semconv:opentelemetry-semconv:1.37.0
+|    |    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.23.0 (*)
+|    |    \--- io.opentelemetry:opentelemetry-api-incubator:1.57.0-alpha (*)
+|    +--- io.opentelemetry:opentelemetry-exporter-otlp-common:1.57.0
+|    |    \--- io.opentelemetry:opentelemetry-exporter-common:1.57.0
+|    |         +--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    |         \--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:1.57.0 (*)
+|    +--- io.opentelemetry:opentelemetry-exporter-otlp:1.57.0
+|    |    +--- io.opentelemetry:opentelemetry-sdk-trace:1.57.0 (*)
+|    |    +--- io.opentelemetry:opentelemetry-sdk-metrics:1.57.0 (*)
+|    |    \--- io.opentelemetry:opentelemetry-sdk-logs:1.57.0 (*)
+|    +--- io.opentelemetry.instrumentation:opentelemetry-runtime-telemetry-java17:2.23.0-alpha
+|    |    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.23.0 (*)
+|    |    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-incubator:2.23.0-alpha (*)
+|    |    \--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
+|    +--- io.vertx:vertx-grpc-client:4.5.27 (*)
+|    \--- io.opentelemetry.instrumentation:opentelemetry-jdbc:2.23.0-alpha
+|         +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.23.0 (*)
+|         +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-incubator:2.23.0-alpha (*)
+|         \--- io.opentelemetry:opentelemetry-api:1.57.0 (*)
++--- io.quarkus:quarkus-logging-json -> 3.33.2
+|    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    +--- io.quarkus:quarkus-jsonp:3.33.2 (*)
+|    \--- org.jboss.logmanager:jboss-logmanager:3.2.1.Final (*)
++--- io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-stackdriver:3.5.0
+|    +--- io.quarkus:quarkus-micrometer:3.31.4 -> 3.33.2
+|    |    +--- io.quarkus:quarkus-core:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-arc:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-vertx-http:3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-jsonp:3.33.2 (*)
+|    |    +--- io.micrometer:micrometer-core:1.16.3
+|    |    |    +--- org.jspecify:jspecify:1.0.0
+|    |    |    +--- io.micrometer:micrometer-commons:1.16.3
+|    |    |    |    \--- org.jspecify:jspecify:1.0.0
+|    |    |    \--- io.micrometer:micrometer-observation:1.16.3
+|    |    |         +--- org.jspecify:jspecify:1.0.0
+|    |    |         \--- io.micrometer:micrometer-commons:1.16.3 (*)
+|    |    \--- org.jboss.slf4j:slf4j-jboss-logmanager:2.0.2.Final
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common-grpc:2.21.0
+|    |    +--- com.google.api:gax-grpc:2.74.1
+|    |    |    +--- com.google.api:gax:2.74.1
+|    |    |    |    +--- com.google.api:api-common:2.57.1
+|    |    |    |    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    |    |    |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|    |    |    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |    |    +--- javax.annotation:javax.annotation-api:1.3.2
+|    |    |    |    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|    |    |    |    |    \--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|    |    |    |    +--- com.google.auth:google-auth-library-credentials:1.42.1
+|    |    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    |    |    +--- com.google.protobuf:protobuf-java:4.33.2
+|    |    |    |    +--- com.google.protobuf:protobuf-java-util:4.33.2
+|    |    |    |    |    \--- com.google.protobuf:protobuf-java:4.33.2
+|    |    |    |    +--- org.threeten:threetenbp:1.7.0 -> 1.7.2
+|    |    |    |    +--- io.opencensus:opencensus-api:0.31.1
+|    |    |    |    |    \--- io.grpc:grpc-context:1.27.2 -> 1.79.0
+|    |    |    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    |    |    \--- com.google.auth:google-auth-library-oauth2-http:1.42.1
+|    |    |    |         +--- com.google.auto.value:auto-value-annotations:1.11.0
+|    |    |    |         +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |         +--- com.google.auth:google-auth-library-credentials:1.42.1
+|    |    |    |         +--- com.google.http-client:google-http-client:2.1.0 -> 1.47.1
+|    |    |    |         |    +--- org.apache.httpcomponents:httpclient:4.5.14
+|    |    |    |         |    |    +--- org.apache.httpcomponents:httpcore:4.4.16
+|    |    |    |         |    |    \--- commons-codec:commons-codec:1.11 -> 1.21.0
+|    |    |    |         |    +--- org.apache.httpcomponents:httpcore:4.4.16
+|    |    |    |         |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    |         |    +--- com.google.errorprone:error_prone_annotations:2.36.0 -> 2.47.0
+|    |    |    |         |    +--- com.google.guava:guava:30.1.1-android -> 33.5.0-jre (*)
+|    |    |    |         |    +--- com.google.j2objc:j2objc-annotations:3.0.0 -> 2.8
+|    |    |    |         |    +--- io.grpc:grpc-context:1.70.0 -> 1.79.0
+|    |    |    |         |    +--- io.opencensus:opencensus-api:0.31.1 (*)
+|    |    |    |         |    \--- io.opencensus:opencensus-contrib-http-util:0.31.1
+|    |    |    |         |         +--- io.opencensus:opencensus-api:0.31.1 (*)
+|    |    |    |         |         \--- com.google.guava:guava:29.0-android -> 33.5.0-jre (*)
+|    |    |    |         +--- com.google.http-client:google-http-client-gson:2.1.0 -> 1.47.1
+|    |    |    |         |    +--- com.google.http-client:google-http-client:1.47.1 (*)
+|    |    |    |         |    \--- com.google.code.gson:gson:2.11.0 -> 2.13.2
+|    |    |    |         |         \--- com.google.errorprone:error_prone_annotations:2.41.0 -> 2.47.0
+|    |    |    |         +--- com.google.guava:guava:33.5.0-android -> 33.5.0-jre (*)
+|    |    |    |         +--- com.google.errorprone:error_prone_annotations:2.38.0 -> 2.47.0
+|    |    |    |         +--- com.google.api:api-common:2.53.0 -> 2.57.1 (*)
+|    |    |    |         \--- com.google.code.gson:gson:2.12.1 -> 2.13.2 (*)
+|    |    |    +--- com.google.api:api-common:2.57.1 (*)
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    |    +--- com.google.auth:google-auth-library-credentials:1.42.1
+|    |    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    |    +--- io.grpc:grpc-api:1.76.2 -> 1.79.0 (*)
+|    |    |    +--- io.grpc:grpc-inprocess:1.76.2 -> 1.79.0
+|    |    |    |    \--- io.grpc:grpc-api:1.79.0 (*)
+|    |    |    +--- org.threeten:threetenbp:1.7.0 -> 1.7.2
+|    |    |    +--- com.google.auth:google-auth-library-oauth2-http:1.42.1 (*)
+|    |    |    +--- io.grpc:grpc-alts:1.76.2 -> 1.79.0
+|    |    |    |    +--- io.grpc:grpc-auth:1.79.0
+|    |    |    |    |    +--- io.grpc:grpc-api:1.79.0 (*)
+|    |    |    |    |    \--- com.google.auth:google-auth-library-credentials:1.41.0 -> 1.42.1
+|    |    |    |    +--- io.grpc:grpc-core:1.79.0 (*)
+|    |    |    |    +--- io.grpc:grpc-context:1.79.0
+|    |    |    |    +--- io.grpc:grpc-protobuf:1.79.0 (*)
+|    |    |    |    +--- io.grpc:grpc-stub:1.79.0 (*)
+|    |    |    |    +--- com.google.protobuf:protobuf-java:3.25.8 -> 4.33.2
+|    |    |    |    +--- org.conscrypt:conscrypt-openjdk-uber:2.5.2
+|    |    |    |    \--- com.google.auth:google-auth-library-oauth2-http:1.41.0 -> 1.42.1 (*)
+|    |    |    +--- io.grpc:grpc-auth:1.76.2 -> 1.79.0 (*)
+|    |    |    +--- io.grpc:grpc-protobuf:1.76.2 -> 1.79.0 (*)
+|    |    |    \--- io.grpc:grpc-stub:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-netty:1.79.0 (*)
+|    |    \--- org.graalvm.sdk:nativeimage:23.1.2
+|    |         \--- org.graalvm.sdk:word:23.1.2
+|    \--- io.micrometer:micrometer-registry-stackdriver:1.16.3
+|         +--- org.jspecify:jspecify:1.0.0
+|         +--- io.micrometer:micrometer-core:1.16.3 (*)
+|         +--- com.google.cloud:google-cloud-monitoring:3.79.0 -> 3.86.0
+|         |    +--- io.grpc:grpc-api:1.76.2 -> 1.79.0 (*)
+|         |    +--- com.google.code.findbugs:jsr305:3.0.2
+|         |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|         |    +--- io.grpc:grpc-stub:1.76.2 -> 1.79.0 (*)
+|         |    +--- org.codehaus.mojo:animal-sniffer-annotations:1.24 -> 1.27
+|         |    +--- io.grpc:grpc-protobuf:1.76.2 -> 1.79.0 (*)
+|         |    +--- com.google.api:api-common:2.57.1 (*)
+|         |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|         |    +--- javax.annotation:javax.annotation-api:1.3.2
+|         |    +--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|         |    +--- com.google.protobuf:protobuf-java:4.33.2
+|         |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|         |    +--- com.google.api.grpc:proto-google-cloud-monitoring-v3:3.86.0
+|         |    |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|         |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|         |    |    +--- javax.annotation:javax.annotation-api:1.3.2
+|         |    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|         |    |    +--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|         |    |    +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|         |    |    \--- org.jspecify:jspecify:1.0.0
+|         |    +--- com.google.guava:guava:33.5.0-jre (*)
+|         |    +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|         |    +--- org.jspecify:jspecify:1.0.0
+|         |    +--- com.google.api:gax:2.74.1 (*)
+|         |    +--- com.google.auth:google-auth-library-credentials:1.42.1
+|         |    +--- com.google.protobuf:protobuf-java-util:4.33.2 (*)
+|         |    +--- io.opencensus:opencensus-api:0.31.1 (*)
+|         |    +--- io.grpc:grpc-context:1.76.2 -> 1.79.0
+|         |    +--- io.grpc:grpc-inprocess:1.76.2 -> 1.79.0 (*)
+|         |    +--- io.grpc:grpc-core:1.76.2 -> 1.79.0 (*)
+|         |    +--- io.grpc:grpc-alts:1.76.2 -> 1.79.0 (*)
+|         |    +--- io.grpc:grpc-grpclb:1.76.2 -> 1.79.0
+|         |    +--- org.conscrypt:conscrypt-openjdk-uber:2.5.2
+|         |    +--- io.grpc:grpc-auth:1.76.2 -> 1.79.0 (*)
+|         |    \--- org.threeten:threetenbp:1.7.0 -> 1.7.2
+|         \--- com.google.auth:google-auth-library-oauth2-http:1.40.0 -> 1.42.1 (*)
++--- io.quarkus:quarkus-container-image-jib -> 3.33.2
+|    \--- io.quarkus:quarkus-container-image:3.33.2
+|         \--- io.quarkus:quarkus-core:3.33.2 (*)
++--- com.slack.api:slack-api-client:1.38.0
+|    +--- com.slack.api:slack-api-model:1.38.0
+|    |    \--- com.google.code.gson:gson:2.10.1 -> 2.13.2 (*)
+|    +--- com.squareup.okhttp3:okhttp:4.12.0
+|    |    +--- com.squareup.okio:okio:3.6.0
+|    |    |    \--- com.squareup.okio:okio-jvm:3.6.0
+|    |    |         +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.9.10 -> 2.3.10
+|    |    |         |    +--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10
+|    |    |         |    |    +--- org.jetbrains:annotations:13.0 -> 26.0.2
+|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.8.0 -> 2.3.10 (c)
+|    |    |         |    |    +--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.0 -> 2.3.10 (c)
+|    |    |         |    |    \--- org.jetbrains.kotlin:kotlin-stdlib-common:2.3.10 (c)
+|    |    |         |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:2.3.10
+|    |    |         |         \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 (*)
+|    |    |         \--- org.jetbrains.kotlin:kotlin-stdlib-common:1.9.10 -> 2.3.10
+|    |    |              \--- org.jetbrains.kotlin:kotlin-stdlib:2.3.10 (*)
+|    |    \--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.21 -> 2.3.10 (*)
+|    +--- com.google.code.gson:gson:2.10.1 -> 2.13.2 (*)
+|    \--- org.slf4j:slf4j-api:1.7.36 -> 2.0.17
++--- org.mockito:mockito-core:5.11.0 -> 5.21.0
+|    +--- net.bytebuddy:byte-buddy:1.17.7 -> 1.17.8
+|    \--- net.bytebuddy:byte-buddy-agent:1.17.7 -> 1.17.8
++--- com.google.genai:google-genai:1.58.0
+|    +--- com.google.auth:google-auth-library-oauth2-http:1.33.0 -> 1.42.1 (*)
+|    +--- com.google.api:api-common:2.45.0 -> 2.57.1 (*)
+|    +--- com.fasterxml.jackson.core:jackson-databind:2.17.2 -> 2.21.2 (*)
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:2.17.2 -> 2.21.2 (*)
+|    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.17.2 -> 2.21.2 (*)
+|    +--- org.java-websocket:Java-WebSocket:1.6.0
+|    |    \--- org.slf4j:slf4j-api:2.0.13 -> 2.0.17
+|    +--- com.squareup.okhttp3:okhttp:4.12.0 (*)
+|    +--- com.google.protobuf:protobuf-java:3.25.5 -> 4.33.2
+|    \--- org.jspecify:jspecify:1.0.0
++--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-firestore -> 2.21.0
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common:2.21.0
+|    |    +--- io.quarkus:quarkus-core:3.32.0 -> 3.33.2 (*)
+|    |    +--- io.quarkus:quarkus-arc:3.32.0 -> 3.33.2 (*)
+|    |    +--- io.quarkus.security:quarkus-security:2.3.2 (*)
+|    |    +--- com.google.auth:google-auth-library-oauth2-http:1.42.1 (*)
+|    |    +--- com.github.luben:zstd-jni:1.5.7-7
+|    |    +--- com.google.cloud:google-cloud-core:2.64.1
+|    |    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    |    +--- com.google.api:gax:2.74.1 (*)
+|    |    |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|    |    |    +--- com.google.protobuf:protobuf-java-util:4.33.2 (*)
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    |    +--- com.google.api.grpc:proto-google-iam-v1:1.60.1
+|    |    |    |    +--- com.google.protobuf:protobuf-java:4.33.2
+|    |    |    |    \--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    |    +--- org.threeten:threetenbp:1.7.0 -> 1.7.2
+|    |    |    +--- com.google.api:api-common:2.57.1 (*)
+|    |    |    +--- com.google.auth:google-auth-library-credentials:1.42.1
+|    |    |    +--- com.google.auth:google-auth-library-oauth2-http:1.42.1 (*)
+|    |    |    +--- com.google.http-client:google-http-client:2.1.0 -> 1.47.1 (*)
+|    |    |    +--- com.google.http-client:google-http-client-gson:2.1.0 -> 1.47.1 (*)
+|    |    |    +--- com.google.protobuf:protobuf-java:4.33.2
+|    |    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|    |    |    \--- com.google.code.findbugs:jsr305:3.0.2
+|    |    +--- org.jboss.logging:commons-logging-jboss-logging:2.0.0.Final (*)
+|    |    \--- org.graalvm.sdk:nativeimage:23.1.2 (*)
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common-grpc:2.21.0 (*)
+|    +--- com.google.cloud:google-cloud-firestore:3.37.0
+|    |    +--- com.google.cloud:google-cloud-core-grpc:2.64.1
+|    |    +--- com.google.http-client:google-http-client:2.1.0 -> 1.47.1 (*)
+|    |    +--- org.apache.httpcomponents:httpclient:4.5.14 (*)
+|    |    +--- org.apache.httpcomponents:httpcore:4.4.16
+|    |    +--- io.grpc:grpc-context:1.76.2 -> 1.79.0
+|    |    +--- io.opencensus:opencensus-contrib-http-util:0.31.1 (*)
+|    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|    |    +--- com.google.api.grpc:proto-google-cloud-firestore-v1:3.37.0
+|    |    |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|    |    |    +--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|    |    |    +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|    |    |    +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |    \--- org.jspecify:jspecify:1.0.0
+|    |    +--- com.google.cloud:proto-google-cloud-firestore-bundle-v1:3.37.0
+|    |    |    +--- com.google.api:api-common:2.57.1 (*)
+|    |    |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|    |    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|    |    |    +--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|    |    |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    |    +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|    |    |    +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    |    \--- org.jspecify:jspecify:1.0.0
+|    |    +--- com.google.auto.value:auto-value-annotations:1.11.0
+|    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    +--- com.google.api:api-common:2.57.1 (*)
+|    |    +--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|    |    +--- io.grpc:grpc-protobuf:1.76.2 -> 1.79.0 (*)
+|    |    +--- com.google.protobuf:protobuf-java:4.33.2
+|    |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    +--- com.google.api:gax:2.74.1 (*)
+|    |    +--- io.opencensus:opencensus-api:0.31.1 (*)
+|    |    +--- com.google.auth:google-auth-library-oauth2-http:1.42.1 (*)
+|    |    +--- io.grpc:grpc-api:1.76.2 -> 1.79.0 (*)
+|    |    +--- com.google.api:gax-grpc:2.74.1 (*)
+|    |    +--- io.grpc:grpc-inprocess:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-core:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-alts:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-grpclb:1.76.2 -> 1.79.0
+|    |    +--- org.conscrypt:conscrypt-openjdk-uber:2.5.2
+|    |    +--- io.grpc:grpc-auth:1.76.2 -> 1.79.0 (*)
+|    |    +--- com.google.api:gax-httpjson:2.74.1
+|    |    +--- com.google.http-client:google-http-client-gson:2.1.0 -> 1.47.1 (*)
+|    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|    |    +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    +--- org.jspecify:jspecify:1.0.0
+|    |    +--- org.threeten:threetenbp:1.7.0 -> 1.7.2
+|    |    +--- io.grpc:grpc-stub:1.76.2 -> 1.79.0 (*)
+|    |    +--- com.google.auth:google-auth-library-credentials:1.42.1
+|    |    +--- com.google.cloud:google-cloud-core:2.64.1 (*)
+|    |    +--- com.google.api.grpc:proto-google-iam-v1:1.60.1 (*)
+|    |    +--- com.google.protobuf:protobuf-java-util:4.33.2 (*)
+|    |    +--- io.opentelemetry:opentelemetry-api:1.51.0 -> 1.57.0 (*)
+|    |    +--- io.opentelemetry:opentelemetry-context:1.51.0 -> 1.57.0 (*)
+|    |    +--- io.opentelemetry.instrumentation:opentelemetry-grpc-1.6:2.1.0-alpha -> 2.23.0-alpha
+|    |    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:2.1.0 -> 2.23.0 (*)
+|    |    +--- io.opentelemetry.semconv:opentelemetry-semconv:1.29.0-alpha -> 1.37.0
+|    |    +--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-incubator:2.1.0-alpha -> 2.23.0-alpha (*)
+|    |    +--- io.opentelemetry:opentelemetry-sdk:1.51.0 -> 1.57.0 (*)
+|    |    +--- io.opentelemetry:opentelemetry-sdk-common:1.51.0 -> 1.57.0 (*)
+|    |    +--- io.opentelemetry:opentelemetry-sdk-trace:1.51.0 -> 1.57.0 (*)
+|    |    +--- io.opentelemetry:opentelemetry-sdk-logs:1.51.0 -> 1.57.0 (*)
+|    |    +--- io.opentelemetry:opentelemetry-sdk-metrics:1.51.0 -> 1.57.0 (*)
+|    |    +--- com.google.cloud.opentelemetry:exporter-metrics:0.33.0
+|    |    +--- org.slf4j:slf4j-api:2.0.16 -> 2.0.17
+|    |    +--- com.google.cloud:google-cloud-monitoring:3.52.0 -> 3.86.0 (*)
+|    |    +--- com.google.api.grpc:proto-google-cloud-monitoring-v3:3.52.0 -> 3.86.0 (*)
+|    |    \--- commons-codec:commons-codec:1.18.0 -> 1.21.0
+|    \--- io.quarkus:quarkus-grpc-common:3.32.0 -> 3.33.2 (*)
++--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-bigquery -> 2.21.0
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common:2.21.0 (*)
+|    +--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common-grpc:2.21.0 (*)
+|    +--- com.google.cloud:google-cloud-bigquery:2.59.0
+|    |    +--- com.google.cloud:google-cloud-core:2.64.1 (*)
+|    |    +--- com.google.protobuf:protobuf-java-util:4.33.2 (*)
+|    |    +--- com.google.api.grpc:proto-google-common-protos:2.65.1 (*)
+|    |    +--- com.google.api.grpc:proto-google-iam-v1:1.60.1 (*)
+|    |    +--- org.threeten:threetenbp:1.7.0 -> 1.7.2
+|    |    +--- com.google.cloud:google-cloud-core-http:2.64.1
+|    |    +--- com.google.api-client:google-api-client:2.7.2
+|    |    |    +--- commons-codec:commons-codec:1.17.1 -> 1.21.0
+|    |    |    +--- com.google.oauth-client:google-oauth-client:1.36.0 -> 1.39.0
+|    |    |    |    +--- com.google.http-client:google-http-client:1.43.3 -> 1.47.1 (*)
+|    |    |    |    +--- com.google.http-client:google-http-client-gson:1.43.3 -> 1.47.1 (*)
+|    |    |    |    \--- com.google.guava:guava:31.1-android -> 33.5.0-jre (*)
+|    |    |    +--- com.google.auth:google-auth-library-credentials:1.30.0 -> 1.42.1
+|    |    |    +--- com.google.auth:google-auth-library-oauth2-http:1.30.0 -> 1.42.1 (*)
+|    |    |    +--- com.google.http-client:google-http-client-gson:1.45.2 -> 1.47.1 (*)
+|    |    |    +--- com.google.guava:guava:33.1.0-jre -> 33.5.0-jre (*)
+|    |    |    +--- com.google.http-client:google-http-client-apache-v2:1.45.2 -> 1.47.1
+|    |    |    |    +--- com.google.http-client:google-http-client:1.47.1 (*)
+|    |    |    |    +--- org.apache.httpcomponents:httpclient:4.5.14 (*)
+|    |    |    |    \--- org.apache.httpcomponents:httpcore:4.4.16
+|    |    |    +--- org.apache.httpcomponents:httpcore:4.4.16
+|    |    |    +--- org.apache.httpcomponents:httpclient:4.5.14 (*)
+|    |    |    \--- com.google.http-client:google-http-client:1.45.2 -> 1.47.1 (*)
+|    |    +--- com.google.oauth-client:google-oauth-client:1.39.0 (*)
+|    |    +--- com.google.http-client:google-http-client-apache-v2:2.1.0 -> 1.47.1 (*)
+|    |    +--- com.google.http-client:google-http-client-appengine:2.1.0 -> 1.47.1
+|    |    +--- com.google.api:gax-httpjson:2.74.1
+|    |    +--- io.opencensus:opencensus-api:0.31.1 (*)
+|    |    +--- io.opencensus:opencensus-contrib-http-util:0.31.1 (*)
+|    |    +--- com.google.http-client:google-http-client-gson:2.1.0 -> 1.47.1 (*)
+|    |    +--- com.google.http-client:google-http-client:2.1.0 -> 1.47.1 (*)
+|    |    +--- org.apache.httpcomponents:httpclient:4.5.14 (*)
+|    |    +--- org.apache.httpcomponents:httpcore:4.4.16
+|    |    +--- com.google.j2objc:j2objc-annotations:3.1 -> 2.8
+|    |    +--- io.grpc:grpc-context:1.76.2 -> 1.79.0
+|    |    +--- org.checkerframework:checker-compat-qual:2.5.6
+|    |    +--- com.google.auth:google-auth-library-credentials:1.42.1
+|    |    +--- com.google.auth:google-auth-library-oauth2-http:1.42.1 (*)
+|    |    +--- com.google.code.findbugs:jsr305:3.0.2
+|    |    +--- com.google.apis:google-api-services-bigquery:v2-rev20251012-2.0.0
+|    |    +--- com.google.api:api-common:2.57.1 (*)
+|    |    +--- com.google.guava:guava:33.5.0-jre (*)
+|    |    +--- com.google.guava:failureaccess:1.0.3 -> 1.0.1
+|    |    +--- com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava
+|    |    +--- org.jspecify:jspecify:1.0.0
+|    |    +--- com.google.api:gax:2.74.1 (*)
+|    |    +--- com.google.code.gson:gson:2.12.1 -> 2.13.2 (*)
+|    |    +--- org.threeten:threeten-extra:1.8.0
+|    |    +--- com.google.protobuf:protobuf-java:4.33.2
+|    |    +--- com.google.cloud:google-cloud-bigquerystorage:3.21.0
+|    |    +--- io.grpc:grpc-api:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-stub:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-protobuf:1.76.2 -> 1.79.0 (*)
+|    |    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1beta:3.21.0
+|    |    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1alpha:3.21.0
+|    |    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1beta1:0.193.0
+|    |    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1beta2:0.193.0
+|    |    +--- com.google.api:gax-grpc:2.74.1 (*)
+|    |    +--- io.grpc:grpc-inprocess:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-core:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-alts:1.76.2 -> 1.79.0 (*)
+|    |    +--- io.grpc:grpc-grpclb:1.76.2 -> 1.79.0
+|    |    +--- org.conscrypt:conscrypt-openjdk-uber:2.5.2
+|    |    +--- io.grpc:grpc-auth:1.76.2 -> 1.79.0 (*)
+|    |    +--- org.json:json:20250517
+|    |    +--- org.apache.arrow:arrow-format:17.0.0
+|    |    +--- com.fasterxml.jackson.core:jackson-core:2.18.2 -> 2.21.2 (*)
+|    |    +--- com.fasterxml.jackson.core:jackson-annotations:2.18.2 -> 2.21
+|    |    +--- com.fasterxml.jackson.core:jackson-databind:2.18.2 -> 2.21.2 (*)
+|    |    +--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.18.2 -> 2.21.2 (*)
+|    |    +--- commons-codec:commons-codec:1.18.0 -> 1.21.0
+|    |    +--- com.google.flatbuffers:flatbuffers-java:24.3.25
+|    |    +--- org.slf4j:slf4j-api:2.0.13 -> 2.0.17
+|    |    +--- com.google.api.grpc:grpc-google-cloud-bigquerystorage-v1beta1:0.193.0
+|    |    +--- com.google.api.grpc:grpc-google-cloud-bigquerystorage-v1beta2:0.193.0
+|    |    +--- com.google.api.grpc:grpc-google-cloud-bigquerystorage-v1:3.21.0
+|    |    +--- com.google.api.grpc:proto-google-cloud-bigquerystorage-v1:3.21.0
+|    |    +--- org.apache.arrow:arrow-vector:17.0.0
+|    |    +--- org.apache.arrow:arrow-memory-core:17.0.0
+|    |    +--- org.apache.arrow:arrow-memory-netty:17.0.0
+|    |    +--- org.apache.arrow:arrow-memory-netty-buffer-patch:17.0.0
+|    |    +--- io.netty:netty-buffer:4.1.110.Final -> 4.1.133.Final (*)
+|    |    +--- io.netty:netty-common:4.1.110.Final -> 4.1.133.Final
+|    |    +--- com.google.errorprone:error_prone_annotations:2.42.0 -> 2.47.0
+|    |    +--- io.opentelemetry:opentelemetry-api:1.51.0 -> 1.57.0 (*)
+|    |    \--- io.opentelemetry:opentelemetry-context:1.51.0 -> 1.57.0 (*)
+|    \--- io.quarkus:quarkus-grpc-common:3.32.0 -> 3.33.2 (*)
++--- com.google.apis:google-api-services-calendar:v3-rev20220715-2.0.0
+|    \--- com.google.api-client:google-api-client:2.0.0 -> 2.7.2 (*)
++--- com.google.auth:google-auth-library-oauth2-http:1.23.0 -> 1.42.1 (*)
++--- org.mapstruct:mapstruct:1.6.3
++--- org.apache.commons:commons-lang3 -> 3.20.0
++--- org.apache.commons:commons-collections4:4.4
++--- org.projectlombok:lombok:{strictly 1.18.46} -> 1.18.46 (c)
++--- org.mapstruct:mapstruct:{strictly 1.6.3} -> 1.6.3 (c)
++--- org.apache.commons:commons-collections4:{strictly 4.4} -> 4.4 (c)
++--- com.slack.api:slack-api-client:{strictly 1.38.0} -> 1.38.0 (c)
++--- io.quarkus:quarkus-hibernate-validator:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.platform:quarkus-google-cloud-services-bom:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-rest-jackson:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-smallrye-openapi:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-stackdriver:{strictly 3.5.0} -> 3.5.0 (c)
++--- org.apache.commons:commons-lang3:{strictly 3.20.0} -> 3.20.0 (c)
++--- io.quarkus:quarkus-logging-json:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-smallrye-fault-tolerance:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-bigquery:{strictly 2.21.0} -> 2.21.0 (c)
++--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-firestore:{strictly 2.21.0} -> 2.21.0 (c)
++--- io.quarkus:quarkus-oidc:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-container-image-jib:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-opentelemetry:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.platform:quarkus-bom:{strictly 3.33.2} -> 3.33.2 (c)
++--- org.mockito:mockito-core:{strictly 5.21.0} -> 5.21.0 (c)
++--- io.quarkus:quarkus-config-yaml:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-rest:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-rest-jackson-common:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye:smallrye-open-api-core:{strictly 4.2.4} -> 4.2.4 (c)
++--- io.quarkus:quarkus-core:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-vertx-http:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-arc:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-swagger-ui:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-vertx:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-security:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-jsonp:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-oidc-common:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-websockets-next-spi:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-devservices:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye:smallrye-jwt:{strictly 4.6.3} -> 4.6.3 (c)
++--- jakarta.annotation:jakarta.annotation-api:{strictly 3.0.0} -> 3.0.0 (c)
++--- io.smallrye.config:smallrye-config-source-yaml:{strictly 3.16.0} -> 3.16.0 (c)
++--- org.eclipse.microprofile.config:microprofile-config-api:{strictly 3.1} -> 3.1 (c)
++--- org.hibernate.validator:hibernate-validator:{strictly 9.1.0.Final} -> 9.1.0.Final (c)
++--- org.glassfish.expressly:expressly:{strictly 6.0.0} -> 6.0.0 (c)
++--- io.smallrye.config:smallrye-config-validator:{strictly 3.16.0} -> 3.16.0 (c)
++--- jakarta.ws.rs:jakarta.ws.rs-api:{strictly 3.1.0} -> 3.1.0 (c)
++--- io.quarkus:quarkus-mutiny:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye:smallrye-fault-tolerance:{strictly 6.10.1} -> 6.10.1 (c)
++--- jakarta.enterprise:jakarta.enterprise.cdi-api:{strictly 4.1.0} -> 4.1.0 (c)
++--- org.jboss.logging:commons-logging-jboss-logging:{strictly 2.0.0.Final} -> 2.0.0.Final (c)
++--- io.quarkus:quarkus-smallrye-context-propagation:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye:smallrye-fault-tolerance-context-propagation:{strictly 6.10.1} -> 6.10.1 (c)
++--- io.smallrye:smallrye-fault-tolerance-mutiny:{strictly 6.10.1} -> 6.10.1 (c)
++--- io.quarkus:quarkus-tls-registry:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-security-runtime-spi:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-grpc-common:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye.common:smallrye-common-vertx-context:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-sdk:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-sdk-extension-autoconfigure-spi:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry.semconv:opentelemetry-semconv:{strictly 1.37.0} -> 1.37.0 (c)
++--- io.opentelemetry.semconv:opentelemetry-semconv-incubating:{strictly 1.37.0-alpha} -> 1.37.0-alpha (c)
++--- io.opentelemetry:opentelemetry-api-incubator:{strictly 1.57.0-alpha} -> 1.57.0-alpha (c)
++--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api:{strictly 2.23.0} -> 2.23.0 (c)
++--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations:{strictly 2.23.0} -> 2.23.0 (c)
++--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-annotations-support:{strictly 2.23.0-alpha} -> 2.23.0-alpha (c)
++--- io.opentelemetry.instrumentation:opentelemetry-instrumentation-api-incubator:{strictly 2.23.0-alpha} -> 2.23.0-alpha (c)
++--- io.opentelemetry:opentelemetry-exporter-otlp-common:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-exporter-otlp:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry.instrumentation:opentelemetry-runtime-telemetry-java17:{strictly 2.23.0-alpha} -> 2.23.0-alpha (c)
++--- io.vertx:vertx-grpc-client:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.opentelemetry.instrumentation:opentelemetry-jdbc:{strictly 2.23.0-alpha} -> 2.23.0-alpha (c)
++--- org.jboss.logmanager:jboss-logmanager:{strictly 3.2.1.Final} -> 3.2.1.Final (c)
++--- io.quarkus:quarkus-micrometer:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common-grpc:{strictly 2.21.0} -> 2.21.0 (c)
++--- io.micrometer:micrometer-registry-stackdriver:{strictly 1.16.3} -> 1.16.3 (c)
++--- io.quarkus:quarkus-container-image:{strictly 3.33.2} -> 3.33.2 (c)
++--- com.slack.api:slack-api-model:{strictly 1.38.0} -> 1.38.0 (c)
++--- com.squareup.okhttp3:okhttp:{strictly 4.12.0} -> 4.12.0 (c)
++--- org.slf4j:slf4j-api:{strictly 2.0.17} -> 2.0.17 (c)
++--- net.bytebuddy:byte-buddy:{strictly 1.17.8} -> 1.17.8 (c)
++--- net.bytebuddy:byte-buddy-agent:{strictly 1.17.8} -> 1.17.8 (c)
++--- com.fasterxml.jackson.core:jackson-databind:{strictly 2.21.2} -> 2.21.2 (c)
++--- com.fasterxml.jackson.datatype:jackson-datatype-jdk8:{strictly 2.21.2} -> 2.21.2 (c)
++--- com.fasterxml.jackson.datatype:jackson-datatype-jsr310:{strictly 2.21.2} -> 2.21.2 (c)
++--- org.java-websocket:Java-WebSocket:{strictly 1.6.0} -> 1.6.0 (c)
++--- org.jspecify:jspecify:{strictly 1.0.0} -> 1.0.0 (c)
++--- io.quarkiverse.googlecloudservices:quarkus-google-cloud-common:{strictly 2.21.0} -> 2.21.0 (c)
++--- io.quarkus:quarkus-rest-common:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.resteasy.reactive:resteasy-reactive-vertx:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-virtual-threads:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.resteasy.reactive:resteasy-reactive-jackson:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-jackson:{strictly 3.33.2} -> 3.33.2 (c)
++--- org.eclipse.microprofile.openapi:microprofile-openapi-api:{strictly 4.1.1} -> 4.1.1 (c)
++--- io.smallrye:smallrye-open-api-model:{strictly 4.2.4} -> 4.2.4 (c)
++--- com.fasterxml.jackson.core:jackson-core:{strictly 2.21.2} -> 2.21.2 (c)
++--- com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:{strictly 2.21.2} -> 2.21.2 (c)
++--- io.smallrye:jandex:{strictly 3.5.3} -> 3.5.3 (c)
++--- io.smallrye.common:smallrye-common-classloader:{strictly 2.16.0} -> 2.16.0 (c)
++--- org.jboss.logging:jboss-logging:{strictly 3.6.2.Final} -> 3.6.2.Final (c)
++--- jakarta.inject:jakarta.inject-api:{strictly 2.0.1} -> 2.0.1 (c)
++--- io.smallrye.common:smallrye-common-os:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.quarkus:quarkus-ide-launcher:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-development-mode-spi:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye.config:smallrye-config:{strictly 3.16.0} -> 3.16.0 (c)
++--- org.jboss.threads:jboss-threads:{strictly 3.9.2} -> 3.9.2 (c)
++--- org.jboss.slf4j:slf4j-jboss-logmanager:{strictly 2.0.2.Final} -> 2.0.2.Final (c)
++--- org.wildfly.common:wildfly-common:{strictly 2.0.1} -> 2.0.1 (c)
++--- io.quarkus:quarkus-value-registry:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-bootstrap-runner:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-fs-util:{strictly 1.3.0} -> 1.3.0 (c)
++--- io.quarkus:quarkus-credentials:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.security:quarkus-security:{strictly 2.3.2} -> 2.3.2 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-web:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.vertx:vertx-web:{strictly 4.5.27} -> 4.5.27 (c)
++--- org.crac:crac:{strictly 1.5.0} -> 1.5.0 (c)
++--- com.aayushatharva.brotli4j:brotli4j:{strictly 1.23.0} -> 1.23.0 (c)
++--- io.quarkus.arc:arc:{strictly 3.33.2} -> 3.33.2 (c)
++--- org.eclipse.microprofile.context-propagation:microprofile-context-propagation-api:{strictly 1.3} -> 1.3 (c)
++--- io.quarkus:quarkus-netty:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.netty:netty-codec-haproxy:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.smallrye.common:smallrye-common-annotation:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.quarkus:quarkus-vertx-latebound-mdc-provider:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-core:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.smallrye:smallrye-fault-tolerance-vertx:{strictly 6.10.1} -> 6.10.1 (c)
++--- jakarta.interceptor:jakarta.interceptor-api:{strictly 2.2.0} -> 2.2.0 (c)
++--- org.eclipse.parsson:parsson:{strictly 1.1.7} -> 1.1.7 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-web-client:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.quarkus:quarkus-smallrye-jwt-build:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus:quarkus-proxy-registry:{strictly 3.33.2} -> 3.33.2 (c)
++--- org.eclipse.microprofile.jwt:microprofile-jwt-auth-api:{strictly 2.1} -> 2.1 (c)
++--- org.bitbucket.b_c:jose4j:{strictly 0.9.6} -> 0.9.6 (c)
++--- io.smallrye:smallrye-jwt-common:{strictly 4.6.3} -> 4.6.3 (c)
++--- org.yaml:snakeyaml:{strictly 2.5} -> 2.5 (c)
++--- io.smallrye.config:smallrye-config-common:{strictly 3.16.0} -> 3.16.0 (c)
++--- io.smallrye.config:smallrye-config-core:{strictly 3.16.0} -> 3.16.0 (c)
++--- io.smallrye.common:smallrye-common-constraint:{strictly 2.16.0} -> 2.16.0 (c)
++--- jakarta.validation:jakarta.validation-api:{strictly 3.1.1} -> 3.1.1 (c)
++--- com.fasterxml:classmate:{strictly 1.7.1} -> 1.7.1 (c)
++--- jakarta.el:jakarta.el-api:{strictly 6.0.1} -> 6.0.1 (c)
++--- io.smallrye.reactive:mutiny:{strictly 3.1.1} -> 3.1.1 (c)
++--- io.smallrye.reactive:mutiny-smallrye-context-propagation:{strictly 3.1.1} -> 3.1.1 (c)
++--- org.eclipse.microprofile.fault-tolerance:microprofile-fault-tolerance-api:{strictly 4.1.2} -> 4.1.2 (c)
++--- io.smallrye:smallrye-fault-tolerance-api:{strictly 6.10.1} -> 6.10.1 (c)
++--- io.smallrye:smallrye-fault-tolerance-core:{strictly 6.10.1} -> 6.10.1 (c)
++--- io.smallrye:smallrye-fault-tolerance-autoconfig-core:{strictly 6.10.1} -> 6.10.1 (c)
++--- io.smallrye:smallrye-fault-tolerance-apiimpl:{strictly 6.10.1} -> 6.10.1 (c)
++--- jakarta.enterprise:jakarta.enterprise.lang-model:{strictly 4.1.0} -> 4.1.0 (c)
++--- io.smallrye:smallrye-context-propagation:{strictly 2.3.0} -> 2.3.0 (c)
++--- io.quarkus:quarkus-tls-registry-spi:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye.certs:smallrye-private-key-pem-parser:{strictly 0.9.3} -> 0.9.3 (c)
++--- io.vertx:vertx-grpc:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.vertx:vertx-grpc-server:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.vertx:vertx-core:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.opentelemetry:opentelemetry-api:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-sdk-common:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-sdk-trace:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-sdk-metrics:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-sdk-logs:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry:opentelemetry-exporter-common:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.vertx:vertx-grpc-common:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.smallrye.common:smallrye-common-cpu:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.smallrye.common:smallrye-common-expression:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.smallrye.common:smallrye-common-net:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.smallrye.common:smallrye-common-ref:{strictly 2.16.0} -> 2.16.0 (c)
++--- jakarta.json:jakarta.json-api:{strictly 2.1.3} -> 2.1.3 (c)
++--- io.micrometer:micrometer-core:{strictly 1.16.3} -> 1.16.3 (c)
++--- com.squareup.okio:okio:{strictly 3.6.0} -> 3.6.0 (c)
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk8:{strictly 2.3.10} -> 2.3.10 (c)
++--- com.fasterxml.jackson.core:jackson-annotations:{strictly 2.21} -> 2.21 (c)
++--- com.fasterxml.jackson:jackson-bom:{strictly 2.21.2} -> 2.21.2 (c)
++--- javax.annotation:javax.annotation-api:{strictly 1.3.2} -> 1.3.2 (c)
++--- com.github.luben:zstd-jni:{strictly 1.5.7-7} -> 1.5.7-7 (c)
++--- org.apache.httpcomponents:httpclient:{strictly 4.5.14} -> 4.5.14 (c)
++--- org.apache.httpcomponents:httpcore:{strictly 4.4.16} -> 4.4.16 (c)
++--- io.opencensus:opencensus-contrib-http-util:{strictly 0.31.1} -> 0.31.1 (c)
++--- io.opencensus:opencensus-api:{strictly 0.31.1} -> 0.31.1 (c)
++--- org.conscrypt:conscrypt-openjdk-uber:{strictly 2.5.2} -> 2.5.2 (c)
++--- org.threeten:threetenbp:{strictly 1.7.2} -> 1.7.2 (c)
++--- io.opentelemetry:opentelemetry-context:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.opentelemetry.instrumentation:opentelemetry-grpc-1.6:{strictly 2.23.0-alpha} -> 2.23.0-alpha (c)
++--- commons-codec:commons-codec:{strictly 1.21.0} -> 1.21.0 (c)
++--- org.checkerframework:checker-compat-qual:{strictly 2.5.6} -> 2.5.6 (c)
++--- org.threeten:threeten-extra:{strictly 1.8.0} -> 1.8.0 (c)
++--- org.json:json:{strictly 20250517} -> 20250517 (c)
++--- org.apache.arrow:arrow-format:{strictly 17.0.0} -> 17.0.0 (c)
++--- org.apache.arrow:arrow-vector:{strictly 17.0.0} -> 17.0.0 (c)
++--- org.apache.arrow:arrow-memory-core:{strictly 17.0.0} -> 17.0.0 (c)
++--- org.apache.arrow:arrow-memory-netty:{strictly 17.0.0} -> 17.0.0 (c)
++--- org.apache.arrow:arrow-memory-netty-buffer-patch:{strictly 17.0.0} -> 17.0.0 (c)
++--- io.netty:netty-buffer:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-common:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.quarkus.resteasy.reactive:resteasy-reactive-common:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.resteasy.reactive:resteasy-reactive:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.quarkus.vertx.utils:quarkus-vertx-utils:{strictly 3.33.2} -> 3.33.2 (c)
++--- jakarta.xml.bind:jakarta.xml.bind-api:{strictly 4.0.5} -> 4.0.5 (c)
++--- com.fasterxml.jackson.module:jackson-module-parameter-names:{strictly 2.21.2} -> 2.21.2 (c)
++--- io.smallrye.common:smallrye-common-function:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.quarkus:quarkus-classloader-commons:{strictly 3.33.2} -> 3.33.2 (c)
++--- io.smallrye.common:smallrye-common-io:{strictly 2.16.0} -> 2.16.0 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-web-common:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-auth-common:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-bridge-common:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-uri-template:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.vertx:vertx-web-common:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.vertx:vertx-auth-common:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.vertx:vertx-bridge-common:{strictly 4.5.27} -> 4.5.27 (c)
++--- com.aayushatharva.brotli4j:service:{strictly 1.23.0} -> 1.23.0 (c)
++--- jakarta.transaction:jakarta.transaction-api:{strictly 2.0.1} -> 2.0.1 (c)
++--- io.netty:netty-codec:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-codec-http:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-codec-http2:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-handler:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-transport:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.smallrye.reactive:smallrye-mutiny-vertx-runtime:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.smallrye.reactive:vertx-mutiny-generator:{strictly 3.21.6} -> 3.21.6 (c)
++--- io.vertx:vertx-web-client:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.smallrye:smallrye-jwt-build:{strictly 4.6.3} -> 4.6.3 (c)
++--- org.ow2.asm:asm:{strictly 9.9.1} -> 9.9.1 (c)
++--- org.jctools:jctools-core:{strictly 4.0.5} -> 4.0.5 (c)
++--- io.smallrye:smallrye-context-propagation-api:{strictly 2.3.0} -> 2.3.0 (c)
++--- io.smallrye:smallrye-context-propagation-storage:{strictly 2.3.0} -> 2.3.0 (c)
++--- io.netty:netty-handler-proxy:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-resolver:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-resolver-dns:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.micrometer:micrometer-commons:{strictly 1.16.3} -> 1.16.3 (c)
++--- io.micrometer:micrometer-observation:{strictly 1.16.3} -> 1.16.3 (c)
++--- org.codehaus.mojo:animal-sniffer-annotations:{strictly 1.27} -> 1.27 (c)
++--- org.jetbrains.kotlin:kotlin-stdlib:{strictly 2.3.10} -> 2.3.10 (c)
++--- org.jetbrains.kotlin:kotlin-stdlib-jdk7:{strictly 2.3.10} -> 2.3.10 (c)
++--- com.squareup.okio:okio-jvm:{strictly 3.6.0} -> 3.6.0 (c)
++--- io.opentelemetry:opentelemetry-common:{strictly 1.57.0} -> 1.57.0 (c)
++--- io.quarkus.resteasy.reactive:resteasy-reactive-common-types:{strictly 3.33.2} -> 3.33.2 (c)
++--- org.reactivestreams:reactive-streams:{strictly 1.0.4} -> 1.0.4 (c)
++--- io.smallrye.reactive:mutiny-zero-flow-adapters:{strictly 1.1.1} -> 1.1.1 (c)
++--- jakarta.activation:jakarta.activation-api:{strictly 2.1.4} -> 2.1.4 (c)
++--- io.vertx:vertx-uri-template:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.netty:netty-transport-native-unix-common:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.vertx:vertx-codegen:{strictly 4.5.27} -> 4.5.27 (c)
++--- io.netty:netty-codec-socks:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- io.netty:netty-codec-dns:{strictly 4.1.133.Final} -> 4.1.133.Final (c)
++--- org.jetbrains:annotations:{strictly 26.0.2} -> 26.0.2 (c)
+\--- org.jetbrains.kotlin:kotlin-stdlib-common:{strictly 2.3.10} -> 2.3.10 (c)
+
+(c) - A dependency constraint, not a dependency. The dependency affected by the constraint occurs elsewhere in the tree.
+(*) - Indicates repeated occurrences of a transitive dependency subtree. Gradle expands transitive dependency subtrees only once per project; repeat occurrences only display the root of the subtree, followed by this annotation.
+
+A web-based, searchable dependency report is available by adding the --scan option.
+
+BUILD SUCCESSFUL in 1s
+1 actionable task: 1 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.5.1/userguide/configuration_cache_enabling.html
