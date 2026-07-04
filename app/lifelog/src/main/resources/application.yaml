@@ -7,7 +7,9 @@ quarkus:
   banner:
     enabled: false
   native:
-    additional-build-args: "--allow-incomplete-classpath"
+    additional-build-args:
+      - "--allow-incomplete-classpath"
+      - "--initialize-at-run-time=com.google.genai"
   # ── HTTP ─────────────────────────────────────────────────
   http:
     port: 5000
