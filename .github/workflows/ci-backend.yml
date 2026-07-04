@@ -1,4 +1,4 @@
-name: CI - WebAPI
+name: CI - Backend
 
 on:
   push:
@@ -10,7 +10,7 @@ on:
       - 'v*'
     paths:
       - 'app/lifelog/**'
-      - '.github/workflows/ci-webapi.yml'
+      - '.github/workflows/ci-backend.yml'
       - '.github/actions/backend-ci/**'
   pull_request:
     branches:
@@ -18,17 +18,18 @@ on:
       - 'develop'
     paths:
       - 'app/lifelog/**'
-      - '.github/workflows/ci-webapi.yml'
+      - '.github/workflows/ci-backend.yml'
       - '.github/actions/backend-ci/**'
 
 jobs:
   test:
     if: |
-      (github.event_name == 'pull_request' && contains(github.head_ref, 'webapi')) ||
-      (github.event_name == 'push' && contains(github.ref_name, 'webapi'))
+      (github.event_name == 'pull_request' && (contains(github.head_ref, 'webapi') || contains(github.head_ref, 'batch') || contains(github.head_ref, 'backend'))) ||
+      (github.event_name == 'push' && (contains(github.ref_name, 'webapi') || contains(github.ref_name, 'batch') || contains(github.ref_name, 'backend')))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Run Backend CI
         uses: ./.github/actions/backend-ci
         with:

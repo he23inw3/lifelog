@@ -1,4 +1,12 @@
 steps:
+  # Step 0: Ensure gradlew has execution permission (needed when source is uploaded from Windows or git index doesn't have it)
+  - name: "alpine"
+    entrypoint: "chmod"
+    args:
+      - "+x"
+      - "gradlew"
+    dir: "app/lifelog"
+
   # Step 1: Build the Quarkus Native application and push the container image directly to Artifact Registry (using Jib)
   - name: "quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-25"
     entrypoint: "./gradlew"
@@ -13,7 +21,27 @@ steps:
       - "-Dquarkus.container-image.tag=${_TAG}"
     dir: "app/lifelog"
 
-  # Step 2: Update the Remind Batch Job with the new image
+  # Step 2: Deploy the Web API service revision to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
+    entrypoint: "gcloud"
+    args:
+      - "run"
+      - "deploy"
+      - "${_APP_NAME}-webapi"
+      - "--image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG}"
+      - "--region=${_REGION}"
+
+  # Step 3: Deploy the Demo service revision to Cloud Run
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
+    entrypoint: "gcloud"
+    args:
+      - "run"
+      - "deploy"
+      - "${_APP_NAME}-demo-webapi"
+      - "--image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG}"
+      - "--region=${_REGION}"
+
+  # Step 4: Update the Remind Batch Job with the new image
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
     entrypoint: "gcloud"
     args:
@@ -24,7 +52,7 @@ steps:
       - "--image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG}"
       - "--region=${_REGION}"
 
-  # Step 3: Update the Reflection Batch Job with the new image
+  # Step 5: Update the Reflection Batch Job with the new image
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
     entrypoint: "gcloud"
     args:

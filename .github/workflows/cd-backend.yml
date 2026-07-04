@@ -1,4 +1,4 @@
-name: CD - WebAPI
+name: CD - Backend
 
 on:
   push:
@@ -33,7 +33,7 @@ jobs:
           V="${{ steps.get_version.outputs.VERSION }}"
 
           gcloud builds submit . \
-            --config cloudbuild-webapi.yaml \
+            --config cloudbuild.yaml \
             --project "$PROJECT_ID" \
             --substitutions="_TAG=${V}" \
             --service-account="projects/${PROJECT_ID}/serviceAccounts/lifelog-cloudbuild-sa@${PROJECT_ID}.iam.gserviceaccount.com"
