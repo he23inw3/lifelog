@@ -6,6 +6,8 @@ quarkus:
     name: lifelog
   banner:
     enabled: false
+  native:
+    additional-build-args: "--allow-incomplete-classpath"
   # ── HTTP ─────────────────────────────────────────────────
   http:
     port: 5000
