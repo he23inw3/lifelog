@@ -1,0 +1,177 @@
+# ============================================================
+# LifeLog - Quarkus Application Configuration
+# ============================================================
+quarkus:
+  application:
+    name: lifelog
+  banner:
+    enabled: false
+  # ── HTTP ─────────────────────────────────────────────────
+  http:
+    port: 5000
+    cors:
+      enabled: true
+      origins: "${CORS_ORIGINS:*}"
+      headers: "*"
+      methods: "*"
+  arc:
+    unremovable-types: "jp.he23inw3.asset.batch.*"
+
+  # ── OIDC (GCP IAM) ───────────────────────────────────────
+  # /api/slack/events は SlackSignatureFilter で別途保護するため
+  # ユーザー設定・セッションAPIのみOIDCを適用する
+  oidc:
+    enabled: true
+    auth-server-url: "https://accounts.google.com"
+    client-id: "${OIDC_CLIENT_ID:lifelog}"
+    token:
+      issuer: "https://accounts.google.com"
+    devservices:
+      enabled: false
+  keycloak:
+    devservices:
+      enabled: false
+
+  # ── OpenAPI / Swagger UI ──────────────────────────────────
+  smallrye-openapi:
+    info-title: "LifeLog API"
+    info-version: "1.0.0"
+    info-description: "ライフログシステム - AI対話型日報・日記ツール"
+    info-contact-name: "he23inw3"
+  swagger-ui:
+    always-include: true
+    path: /swagger-ui
+
+  # ── Logging (JSON for Cloud Logging) ─────────────────────
+  log:
+    level: INFO
+    category:
+      "jp.he23inw3":
+        level: DEBUG
+      "io.smallrye.faulttolerance":
+        level: DEBUG
+      "io.quarkus.vertx.http.runtime.cors":
+        level: DEBUG
+    console:
+      format: "%d{yyyy-MM-dd HH:mm:ss} %-5p traceId=%X{traceId} [%c{3.}] (%t) %s%e%n"
+      json: false # dev時はテキスト。本番はlogging-json拡張が自動でJSONに切替
+
+  # ── Container Image (Jib) ────────────────────────────────
+  container-image:
+    group: jp.he23inw3
+    name: lifelog
+    tag: "${quarkus.application.version:latest}"
+
+  # ── OpenTelemetry（Trace ID 自動生成） ────────────────────────────────────────
+  otel:
+    enabled: true
+    sdk:
+      disabled: false
+    traces:
+      exporter: none # ローカルでは外部送信しない
+
+  # ── Micrometer ─────────────────────────────────────────────────────────────────
+  micrometer:
+    export:
+      stackdriver:
+        project-id: ${GOOGLE_CLOUD_PROJECT:lifelog-dev}
+        enabled: false
+
+  # ── Fault Tolerance Configuration ─────────────────────────────────────────────
+  fault-tolerance:
+    # Google Calendar Gateway configuration
+    "jp.he23inw3.asset.infrastructure.google.GoogleCalendarGatewayImpl":
+      retry:
+        max-retries: "${CALENDAR_RETRY_MAX_RETRIES:3}"
+        delay: "${CALENDAR_RETRY_DELAY_MS:1000}"
+
+    # Slack Gateway configuration
+    "jp.he23inw3.asset.infrastructure.slack.SlackGatewayImpl":
+      retry:
+        max-retries: "${SLACK_RETRY_MAX_RETRIES:3}"
+        delay: "${SLACK_RETRY_DELAY_MS:1000}"
+
+    # Gemini Gateway configuration
+    "jp.he23inw3.asset.infrastructure.vertexai.VertexAiGeminiGatewayImpl":
+      retry:
+        max-retries: "${GEMINI_RETRY_MAX_RETRIES:3}"
+        delay: "${GEMINI_RETRY_DELAY_MS:1000}"
+
+# ── LifeLog Custom Properties ───────────────────────────────────────────────
+lifelog:
+  app-node: "${APP_NODE:dev}"
+  google:
+    project-id: "${GOOGLE_CLOUD_PROJECT:lifelog-dev}"
+    japanese-holiday-calendar-id: "ja.japanese#holiday@group.v.calendar.google.com"
+    oauth-client-id: "${GOOGLE_OAUTH_CLIENT_ID:dummy-google-client-id}"
+    oauth-client-secret: "${GOOGLE_OAUTH_CLIENT_SECRET:dummy-google-client-secret}"
+    oauth-redirect-uri: "${GOOGLE_OAUTH_REDIRECT_URI:http://localhost:5000/api/v1/auth/google/callback}"
+  gemini:
+    location: "${GEMINI_LOCATION:asia-northeast1}"
+    model: "${GEMINI_MODEL:gemini-2.5-flash-lite}"
+  slack:
+    signing-secret: "${SLACK_SIGNING_SECRET:dummy-signing-secret}"
+    bot-token: "${SLACK_BOT_TOKEN:xoxb-dummy}"
+  bigquery:
+    dataset: "${BIGQUERY_DATASET:lifelog_dataset}"
+  demo:
+    enabled: "${DEMO_MODE:false}"
+    user-email: "${DEMO_USER_EMAIL:demo@example.com}"
+    slack-user-id: "${DEMO_SLACK_USER_ID:DEMO_USER}"
+  crypto:
+    key-value: "${CRYPTO_KEY:1234567890123456}"
+  portal:
+    base-url: "${PORTAL_BASE_URL:http://localhost:5174}"
+  bootstrap:
+    allowed-email: "${BOOTSTRAP_ALLOWED_EMAIL:demo@example.com}"
+
+# ── Production Profile ────────────────────────────────────────────────────────
+"%prod":
+  quarkus:
+    log:
+      console:
+        json: true
+    swagger-ui:
+      always-include: false
+
+# ── Dev Profile ───────────────────────────────────────────────────────────────
+"%dev":
+  quarkus:
+    http:
+      port: 5000
+
+    google:
+      cloud:
+        project-id: "lifelog-dev"
+        service-account-encoded-key: "eyJ0eXBlIjogInNlcnZpY2VfYWNjb3VudCIsICJwcm9qZWN0X2lkIjogImxpZmVsb2ctZGV2IiwgInByaXZhdGVfa2V5X2lkIjogImR1bW15IiwgInByaXZhdGVfa2V5IjogIi0tLS0tQkVHSU4gUFJJVkFURSBLRVktLS0tLVxuTUlJRXZRSUJBREFOQmdrcWhraUc5dzBCQVFFRkFBU0NCS2N3Z2dTakFnRUFBb0lCQVFDZkY0SFBJN21qeEQ1Q1xuS21JUW1JanNra2FjSnI0NHJUTEp2TUs2YkhwOVNMRk9MeU8rTHpVVUhHcnBleS91cVZENi9DMHpkeDkySTVRTFxuWTJyUTdORXJ2b0tDT2h2a1RQZGdEYVgrWjhuQk5WTUxWS2dHME1MbzJwT2NYbklINU1JblV4ektwdjluV21ablxuSTJ3QmlSTFVqemFxZTEzOWNlN1EvZjRXbE9mMnB5SkhDRnQvOXNBQ3NETkZPM0dIWFZOL1hGaEhMRXAwL2J0aFxuWVJMVVF5OFI4eU9ZZHdhWnBHdmVFZGoxN2lsZkl0cWhGaXRFcnE4a09BT3VTc0FYd0pjYUZWd2hJRzVKaGI3WFxuQ205OGZNRnJVbDVhUjJBaml0MG4remt0QmJSWUtucm5DaG84YlUyT0tSdmtMZ3YrbjlWYnBibytBM2d4UmdnVVxuaEwwVEdHSGRBZ01CQUFFQ2dnRUFBTEVCOXBhc1U3VmllSTE2Ny9hSEZkRjI3c1BPVjRHMzNaK1g1YnZiUzhNWlxuU05mZlJiclZJTGxxT2pTTkJmSmFHei9RVkhwdWo3MWlMZFhUUjRXQ29vMkpQMWFscGcySVA3UjAwR1pwYVR1NVxubU5iWDJodTdLbmJxRUZKcXdzcGE1bFV2K1ZqV0lGVmVGT2NCclA5ZHJtc203Tlpzd2Z3UThudEFIa29CdUwvZlxuSHZmbEN5VzNXNjgyeU5qQyswd1ZIWmdWVU16S09YNEtmb2paMkZsbHlicWMvb29Bb3JiRnlkVzg3VXZlTjhiK1xucmQ3MWRZb29hbmJUeGliMTlySU0rL2U0Uk5xZS9CMTl2OVpmbmlkVExkMWRONXQxRFZpeUdmRlJ0MHduQnVvNFxuVmdCZG9GWnRZcUtxcXh6SlNqZFZxeWg2M1ZPcE1STXhybmtlT1d5VXd3S0JnUURHem9GYllvNThob01oYU1QblxuQ2xtbHByVFFUVko5ZGlpaWY2YjZyQUd6V1VVdS9PRndqSE9Eby8rVUY5c2sxNkl2ekcrWk9jcDVCMFBvN0xlRFxuek0vVy8zQU84UFpoSWVzak5DUlZKeVhaM1k4ZUExOXZwNmQ1d0l0VXcwMXZiNWxrbVZ6Q2RWbFVuK2ZaQU01WFxuMDdJeGV3OVJHTU9IZTRVREljd1NsZU50d3dLQmdRRE0zQ0NIcEVvQUJFWnB2SVRna1ZReWpsTzZITTdYK2ZNM1xuMGttT2R5RW5iRGtRZTRmeWxJbmlJMjIxVlRJcGpFRXhkNnRTaDkyQ3N0UnU5YVNCOVBIdjMwc1Ayd2VYODh2Y1xuelM0eDA2c1hCS2xEWEhFQ0w3Z2s5d01sNnh4OWVIS2FYNTcvWFpMeXU1UFRNSThnZDZsSmpxcDJnRTFudkNYbVxuaWd0NW5pL1gzd0tCZ0dMUU5WOTBweG1oeWYrTEVRUC9FdnZRMWtKS2pGdXJwUnJQay9FNEdVaEpjS2VnTFhWQlxuZWhET0xMUXcvMDFhbUZSbHFucGdUUkRHMmF3bUxEaW9UZzJ3dk1customQlpNVjJsR2JVL2RJTk9UVUdlS0lVVHhVeVxuSVgzVWcreEhmbStLNnBVajNRVVNTcXBUS0d1bGlPb0NZS2xUWHhPUjJXMjNxUzhiVjFGTml0TDlBb0dBRVRVNFxuWWt4eGp0ak5GVnFwaXJlS2JBaTZqYnFYd1ZxVWpJN1VjT3dlMDlIcVpURUxOVncyek5FUENSbFQ4bHQrcW1vVFxuOFFYS25JenEvVHNUQzN1SXl3NWxucnBXUS9STm5vbDVwT1BUek15OWFTUk5YN09tQVJMdG1hdWFQZXlJTGVCXG5nby9ZcFIwT2lNSGllYytxNVJKMkFRaDM2NG9qU1lqQWNVS1h4L044Q2dZRUFrcUhMTmlJYURQZHI0a250SC85S1xuZWRjRmVyMTVleXhWSnN6ZUVjK29FajB4NUo5dDB2aTR2RENIK0JoM002eHB3SnpCV0ZXS2ZiMm1uWDkydFhaNlxuZmMvTjdaYThEc2x5K2lsVDVwQjVZVmVwQUZ6R1lueU1abU9wam1yUnp5Sit6V2lSRE5UWTZlTmJENVhDdkoxWVxud1RmU29jYVlxU0JZaGovTWYybWkyWFE9XG4tLS0tLUVORCBQUklWQVRFIEtFWS0tLS0tXG4iLCAiY2xpZW50X2VtYWlsIjogImR1bW15QGxpZmVsb2ctZGV2LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwgImNsaWVudF9pZCI6ICJkdW1teSIsICJhdXRoX3VyaSI6ICJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20vby9vYXV0aDIvYXV0aCIsICJ0b2tlbl91cmkiOiAiaHR0cHM6Ly9vYXV0aDIuZ29vZ2xlYXBpcy5jb20vdG9rZW4iLCAiYXV0aF9wcm92aWRlcl94NTA5X2NlcnRfdXJsIjogImh0dHBzOi8vd3d3Lmdvb2dsZWFwaXMuY29tL29hdXRoMi92MS9jZXJ0cyIsICJjbGllbnRfeDUwOV9jZXJ0X3VybCI6ICJodHRwczovL3d3dy5nb29nbGVhcGlzLmNvbS9yb2JvdC92MS9tZXRhZGF0YS94NTA5L2R1bW15JTQwbGlmZWxvZy1kZXYuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20ifQ=="
+        firestore:
+          host-override: "localhost:8080"
+        bigquery:
+          host-override: "http://localhost:9050"
+  lifelog:
+    demo:
+      enabled: "${DEMO_MODE:true}"
+    bigquery:
+      dataset: "${BIGQUERY_DATASET:lifelog_dev}"
+
+# ── Remind Batch Profile ──────────────────────────────────────────────────────
+"%remind-batch":
+  quarkus:
+    http:
+      host-enabled: false
+    swagger-ui:
+      always-include: false
+    log:
+      console:
+        json: "${BATCH_JSON_LOGGING:true}"
+
+# ── Reflection Batch Profile ──────────────────────────────────────────────────
+"%reflection-batch":
+  quarkus:
+    http:
+      host-enabled: false
+    swagger-ui:
+      always-include: false
+    log:
+      console:
+        json: "${BATCH_JSON_LOGGING:true}"

@@ -1,0 +1,131 @@
+plugins {
+    id 'java'
+    id 'io.quarkus' version '3.33.2'
+    id 'jacoco'
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+group   = 'jp.he23inw3'
+version = '1.0.0-SNAPSHOT'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(25)
+    }
+}
+
+dependencyLocking {
+    lockAllConfigurations()
+    ignoredDependencies.add("org.graalvm.sdk:*")
+    ignoredDependencies.add("io.grpc:*")
+    ignoredDependencies.add("com.google.*:*")
+}
+
+def mapstructVersion = '1.6.3'
+def lombokVersion   = '1.18.46'
+
+dependencies {
+    // ── BOM ──────────────────────────────────────────────────────────────────
+    implementation enforcedPlatform('io.quarkus.platform:quarkus-bom:3.33.2')
+    implementation enforcedPlatform('io.quarkus.platform:quarkus-google-cloud-services-bom:3.33.2')
+
+    // ── Adapter Layer ───────────────────────────────────────────────────────
+    implementation 'io.quarkus:quarkus-rest-jackson'
+    implementation 'io.quarkus:quarkus-smallrye-openapi'
+    implementation 'io.quarkus:quarkus-oidc'
+    implementation 'io.quarkus:quarkus-config-yaml'
+    implementation 'io.quarkus:quarkus-hibernate-validator'
+    implementation 'io.quarkus:quarkus-smallrye-fault-tolerance'
+
+    // ── Observability ─────────────────────────────────────────────────────────
+    implementation 'io.quarkus:quarkus-opentelemetry'
+    implementation 'io.quarkus:quarkus-logging-json'
+    implementation 'io.quarkiverse.micrometer.registry:quarkus-micrometer-registry-stackdriver:3.5.0'
+
+    // ── Infrastructure Layer ───────────────────────────────────────
+    implementation 'io.quarkus:quarkus-container-image-jib'
+
+    // Slack API
+    implementation 'com.slack.api:slack-api-client:1.38.0'
+    implementation 'org.mockito:mockito-core:5.11.0'
+
+    // Google Cloud & Vertex AI SDK
+    implementation 'com.google.genai:google-genai:1.58.0'
+    implementation 'io.quarkiverse.googlecloudservices:quarkus-google-cloud-firestore'
+    implementation 'io.quarkiverse.googlecloudservices:quarkus-google-cloud-bigquery'
+    implementation 'com.google.apis:google-api-services-calendar:v3-rev20220715-2.0.0'
+    implementation 'com.google.auth:google-auth-library-oauth2-http:1.23.0'
+
+    // ── Lombok ────────────────────────────────────────────────────────────────
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+    
+    // MapStruct + Lombok 共存用バインディング
+    annotationProcessor 'org.projectlombok:lombok-mapstruct-binding:0.2.0'
+
+    // ── MapStruct ─────────────────────────────────────────────────────────────
+    implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+    annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+    // ── Common Utils ──────────────────────────────────────────────────────────
+    implementation 'org.apache.commons:commons-lang3'
+    implementation 'org.apache.commons:commons-collections4:4.4'
+
+    // ── Test ──────────────────────────────────────────────────────────────────
+    testImplementation 'io.quarkus:quarkus-junit5'
+    testImplementation 'io.quarkus:quarkus-junit5-mockito'
+    testImplementation 'io.quarkus:quarkus-test-security'
+    testImplementation 'io.rest-assured:rest-assured'
+    testImplementation 'org.assertj:assertj-core:3.25.3'
+    testImplementation 'com.tngtech.archunit:archunit-junit5:1.4.2'
+}
+
+jacoco {
+    toolVersion = "0.8.15"
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn jacocoTestReport
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.70
+            }
+        }
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.compilerArgs += [
+        '-Amapstruct.defaultComponentModel=cdi',
+        '-Amapstruct.unmappedTargetPolicy=ERROR',
+        '-Amapstruct.verbose=true'
+    ]
+}
+
+tasks.register('resolveAllDependencies') {
+    doLast {
+        configurations.configureEach { configuration ->
+            if (configuration.canBeResolved) {
+                try {
+                    configuration.resolve()
+                } catch (Exception e) {
+                    // Ignore configurations that fail to resolve
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+name: 'Terraform CI Component'
+description: 'Setup Terraform, init, validate, and scan'
+inputs:
+  working-directory:
+    description: 'Working directory'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - uses: hashicorp/setup-terraform@v3
+      with:
+        terraform_version: 1.10.0
+    - name: Format Check
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: terraform fmt -recursive -check
+    - name: Initialize
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: terraform init -backend=false
+    - name: Validate
+      shell: bash
+      working-directory: ${{ inputs.working-directory }}
+      run: terraform validate
+    - name: Trivy Scan (Terraform)
+      uses: aquasecurity/trivy-action@master
+      with:
+        scan-ref: '${{ inputs.working-directory }}'
+        scan-type: 'config'
+        exit-code: '1'
+        severity: 'CRITICAL,HIGH'

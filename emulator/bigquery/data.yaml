@@ -1,0 +1,119 @@
+projects:
+  - id: lifelog-dev
+    datasets:
+      - id: lifelog_dev
+        tables:
+          - id: daily_logs
+            columns:
+              - name: slack_user_id
+                type: STRING
+                mode: REQUIRED
+              - name: log_date
+                type: DATE
+                mode: REQUIRED
+              - name: raw_text
+                type: STRING
+                mode: REQUIRED
+              - name: is_holiday
+                type: BOOLEAN
+                mode: REQUIRED
+              - name: tasks
+                type: STRING
+                mode: NULLABLE
+              - name: work_hours
+                type: FLOAT
+                mode: NULLABLE
+              - name: overtime_hours
+                type: FLOAT
+                mode: NULLABLE
+              - name: diary
+                type: STRING
+                mode: NULLABLE
+              - name: sentiment
+                type: STRING
+                mode: NULLABLE
+              - name: trace_id
+                type: STRING
+                mode: NULLABLE
+              - name: created_at
+                type: TIMESTAMP
+                mode: REQUIRED
+              - name: updated_at
+                type: TIMESTAMP
+                mode: REQUIRED
+            data:
+              # Seed data for Slack User U12345678
+              - slack_user_id: U12345678
+                log_date: 2026-06-01
+                raw_text: 今日はQuarkusの開発をしました。
+                is_holiday: false
+                tasks: Quarkusアプリ開発
+                work_hours: 8.0
+                overtime_hours: 1.0
+                diary: 開発が捗った。
+                sentiment: Happy
+                trace_id: trace-001
+                created_at: 2026-06-12T09:00:00Z
+                updated_at: 2026-06-12T09:00:00Z
+              - slack_user_id: U12345678
+                log_date: 2026-06-02
+                raw_text: 本日は有給休暇を取得しました。
+                is_holiday: true
+                tasks: ""
+                work_hours: 0.0
+                overtime_hours: 0.0
+                diary: 温泉に行ってリフレッシュ。
+                sentiment: Happy
+                trace_id: trace-002
+                created_at: 2026-06-12T09:00:00Z
+                updated_at: 2026-06-12T09:00:00Z
+              - slack_user_id: U12345678
+                log_date: 2026-06-03
+                raw_text: Slack署名検証の実装。バグ修正で苦戦。
+                is_holiday: false
+                tasks: Slack API署名検証
+                work_hours: 7.5
+                overtime_hours: 0.0
+                diary: エラーを解決して動いた！
+                sentiment: Neutral
+                trace_id: trace-003
+                created_at: 2026-06-12T09:00:00Z
+                updated_at: 2026-06-12T09:00:00Z
+
+              # Seed data for Demo User (DEMO_USER)
+              - slack_user_id: DEMO_USER
+                log_date: 2026-06-01
+                raw_text: 本日は有給休暇を取得しました。
+                is_holiday: true
+                tasks: ""
+                work_hours: 0.0
+                overtime_hours: 0.0
+                diary: 温泉に行ってリフレッシュ。
+                sentiment: Happy
+                trace_id: trace-demo-001
+                created_at: 2026-06-12T09:00:00Z
+                updated_at: 2026-06-12T09:00:00Z
+              - slack_user_id: DEMO_USER
+                log_date: 2026-06-02
+                raw_text: 本日もお疲れ様でした！10時から19時までQuarkusのCORS設定の修正を行いました。無事に解決してフロントエンドからAPIが叩けるようになりました。
+                is_holiday: false
+                tasks: Quarkus & React 開発
+                work_hours: 8.0
+                overtime_hours: 0.0
+                diary: CORS設定の修正が完了。
+                sentiment: Happy
+                trace_id: trace-demo-002
+                created_at: 2026-06-12T09:00:00Z
+                updated_at: 2026-06-12T09:00:00Z
+              - slack_user_id: DEMO_USER
+                log_date: 2026-06-03
+                raw_text: CORS設定修正テスト。13:00-15:00 接続確認テストを実施。
+                is_holiday: false
+                tasks: CORS設定修正テスト
+                work_hours: 2.0
+                overtime_hours: 0.0
+                diary: 接続確認テストテスト。
+                sentiment: Neutral
+                trace_id: trace-demo-003
+                created_at: 2026-06-12T09:00:00Z
+                updated_at: 2026-06-12T09:00:00Z

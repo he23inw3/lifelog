@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  bigquery-emulator:
+    image: ghcr.io/goccy/bigquery-emulator:latest
+    ports:
+      - "9050:9050"
+    volumes:
+      - ./emulator/bigquery:/etc/bigquery
+    command: [ "--project", "lifelog-dev", "--port", "9050", "--data-from-yaml", "/etc/bigquery/data.yaml" ]
+  
+  bigquery-ui:
+    image: ghcr.io/filipecaixeta/bigquery-emulator-ui:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - BIGQUERY_PROJECT_ID=lifelog-dev
+      - BIGQUERY_EMULATOR_HOST=bigquery-emulator:9050
+    depends_on:
+      - bigquery-emulator
+
+  firebase-emulator:
+    build:
+      context: .
+      dockerfile: ./emulator/firebase/Dockerfile
+    ports:
+      - "8080:8080" # Firestore
+      - "8085:8085" # PubSub
+      - "4000:4000" # Emulator UI
+      - "9150:9150" # Hub
+      - "9151:9151" # Firestore UI WebSocket
+    volumes:
+      - ./emulator/firebase:/app
+      - ./emulator/firebase/data:/app/data
+    environment:
+      - GOOGLE_CLOUD_PROJECT=lifelog-dev
+    command: [ "firebase", "emulators:start", "--only", "firestore,pubsub", "--project", "lifelog-dev", "--import", "/app/data", "--export-on-exit", "/app/data" ]
+
+volumes:
+  emulator_data:

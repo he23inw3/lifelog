@@ -1,0 +1,39 @@
+name: CD - WebAPI
+
+on:
+  push:
+    tags:
+      - "v-*"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: "read"
+      id-token: "write"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Get the version
+        id: get_version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Authenticate with Google Cloud
+        uses: ./.github/actions/gcp-auth
+        with:
+          workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
+          service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
+
+      - name: "Build and Deploy"
+        env:
+          PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
+        run: |
+          cd ${{ github.workspace }}
+          V="${{ steps.get_version.outputs.VERSION }}"
+
+          gcloud builds submit . \
+            --config cloudbuild-webapi.yaml \
+            --project "$PROJECT_ID" \
+            --substitutions="_TAG=${V}" \
+            --service-account="projects/${PROJECT_ID}/serviceAccounts/lifelog-cloudbuild-sa@${PROJECT_ID}.iam.gserviceaccount.com"

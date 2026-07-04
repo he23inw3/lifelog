@@ -1,0 +1,82 @@
+# ── IDE / Editor (Keep common settings, ignore local overrides) ──
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionary.xml
+.idea/shelf/
+.idea/locks/
+.vscode/launch.json
+.vscode/tasks.json
+.vscode/settings.json
+
+# ── Java / Gradle (Quarkus) ────────────────────────────────────
+.gradle/
+build/
+.settings/
+.project
+.classpath
+.factorypath
+app/lifelog/.gradle/
+app/lifelog/build/
+app/lifelog/out/
+app/lifelog/bin/
+bin/
+out/
+*.bak
+backup/
+
+# Quarkus specific
+app/lifelog/.quarkus/
+app/lifelog/target/
+
+# Log files
+*.log
+
+# ── Terraform ──────────────────────────────────────────────────
+# Local .terraform directories
+**/.terraform/
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files
+*.tfvars
+*.tfvars.json
+
+# Ignore override files
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Include write-protection file for terraform
+.terraform.lock.hcl
+
+# ── Local Credentials & Environment Variables ────────────────────
+# Local environment variables files
+tools/.env
+.env
+.env.local
+
+# GCP / Private credentials & certificate keys
+*.pem
+*.key
+*.p12
+*key.json
+*credentials.json
+!**/dummy-credentials.json
+
+# ── OS ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Firebase Emulator ─────────────────────────────────────────
+emulator/firebase/firebase-export-*/
+emulator/firebase/data/
+
+# ── Documentation ────────────────────────────────────────────
+docs/

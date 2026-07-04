@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<profiles version="12">
+    <profile kind="CodeFormatterProfile" name="Custom Profile" version="12">
+        <!-- 1行の最大列数を160にする -->
+        <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="160"/>
+        <!-- コメントの最大列数を160にする -->
+        <setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="160"/>
+        <!-- アノテーションの後に改行を挿入する -->
+        <setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_type" value="insert"/>
+        <setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_method" value="insert"/>
+        <setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_field" value="insert"/>
+        <setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_local_variable" value="insert"/>
+        <setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_parameter" value="do not insert"/>
+        <setting id="org.eclipse.jdt.core.formatter.insert_new_line_after_annotation_on_package" value="insert"/>
+        <!-- 手動で改行した箇所を自動フォーマッタで再結合しないようにする -->
+        <setting id="org.eclipse.jdt.core.formatter.join_wrapped_lines" value="false"/>
+        <!-- アノテーションの引数を必要に応じて折り返す（改行を維持する） -->
+        <setting id="org.eclipse.jdt.core.formatter.alignment_for_arguments_in_annotation" value="48"/>
+        <!-- 配列初期化子内の要素を必要に応じて折り返す（改行を維持する） -->
+        <setting id="org.eclipse.jdt.core.formatter.alignment_for_expressions_in_array_initializer" value="48"/>
+        <!-- コメントの自動フォーマット（結合・折り返し）を無効化して手動改行を維持する -->
+        <setting id="org.eclipse.jdt.core.formatter.comment.format_javadoc_comments" value="false"/>
+        <setting id="org.eclipse.jdt.core.formatter.comment.format_block_comments" value="false"/>
+        <setting id="org.eclipse.jdt.core.formatter.comment.format_line_comments" value="false"/>
+    </profile>
+</profiles>

@@ -1,0 +1,49 @@
+name: CI - Terraform
+
+on:
+  push:
+    branches:
+      - '**'
+      - '!main'
+      - '!develop'
+    tags-ignore:
+      - 'v*'
+    paths:
+      - 'terraform/**'
+      - '.github/workflows/ci-terraform.yml'
+      - '.github/actions/terraform-ci/**'
+  pull_request:
+    branches:
+      - 'main'
+      - 'develop'
+    paths:
+      - 'terraform/**'
+      - '.github/workflows/ci-terraform.yml'
+      - '.github/actions/terraform-ci/**'
+
+jobs:
+  test-gcp:
+    name: Terraform CI (GCP)
+    if: |
+      (github.event_name == 'pull_request' && contains(github.head_ref, 'terraform')) ||
+      (github.event_name == 'push' && contains(github.ref_name, 'terraform'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Terraform CI (GCP)
+        uses: ./.github/actions/terraform-ci
+        with:
+          working-directory: ./terraform/gcp
+
+  test-cloudflare:
+    name: Terraform CI (Cloudflare)
+    if: |
+      (github.event_name == 'pull_request' && contains(github.head_ref, 'terraform')) ||
+      (github.event_name == 'push' && contains(github.ref_name, 'terraform'))
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Terraform CI (Cloudflare)
+        uses: ./.github/actions/terraform-ci
+        with:
+          working-directory: ./terraform/cloudflare

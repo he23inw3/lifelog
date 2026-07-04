@@ -1,0 +1,22 @@
+name: 'GCP Auth'
+description: 'Authenticate with Google Cloud using Workload Identity'
+inputs:
+  workload_identity_provider:
+    description: 'WIF Provider'
+    required: true
+  service_account:
+    description: 'Service Account'
+    required: true
+
+runs:
+  using: "composite"
+  steps:
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        workload_identity_provider: ${{ inputs.workload_identity_provider }}
+        service_account: ${{ inputs.service_account }}
+        token_format: 'access_token'
+
+    - name: 'Set up Cloud SDK'
+      uses: 'google-github-actions/setup-gcloud@v2'
