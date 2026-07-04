@@ -10,6 +10,9 @@ quarkus:
     additional-build-args:
       - "--allow-incomplete-classpath"
       - "--initialize-at-run-time=com.google.genai"
+      - "--initialize-at-run-time=com.slack.api"
+      - "--initialize-at-build-time=sun.security.ssl.SSLSocketFactoryImpl"
+      - '--exclude-config=.*google-genai.*\.jar\,.*reflect-config\.json'
   # ── HTTP ─────────────────────────────────────────────────
   http:
     port: 5000
