@@ -98,3 +98,21 @@ resource "google_service_account_iam_member" "github_actions_act_as_cloudbuild" 
 
   depends_on = [time_sleep.wait_for_google]
 }
+
+# Grant GitHub Actions Service Account permissions to use APIs (Service Usage Consumer)
+resource "google_project_iam_member" "github_actions_serviceusage_consumer" {
+  project = var.project_id
+  role    = "roles/serviceusage.serviceUsageConsumer"
+  member  = "serviceAccount:${google_service_account.github_actions_sa.email}"
+
+  depends_on = [time_sleep.wait_for_google]
+}
+
+# Grant GitHub Actions Service Account Storage Admin permissions to upload source to the Cloud Build staging bucket
+resource "google_project_iam_member" "github_actions_storage_admin" {
+  project = var.project_id
+  role    = "roles/storage.admin"
+  member  = "serviceAccount:${google_service_account.github_actions_sa.email}"
+
+  depends_on = [time_sleep.wait_for_google]
+}
