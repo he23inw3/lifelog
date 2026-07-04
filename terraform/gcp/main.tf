@@ -40,6 +40,7 @@ resource "google_project_service" "services" {
     "monitoring.googleapis.com",
     "billingbudgets.googleapis.com",
     "storage.googleapis.com",
+    "cloudbuild.googleapis.com",
   ])
 
   service            = each.key
