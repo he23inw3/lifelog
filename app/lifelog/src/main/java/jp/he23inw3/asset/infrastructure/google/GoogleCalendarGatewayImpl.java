@@ -13,7 +13,6 @@ import com.google.api.services.calendar.model.Events;
 import com.google.auth.http.HttpCredentialsAdapter;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.auth.oauth2.UserCredentials;
-import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.ApplicationScoped;
 import java.io.IOException;
 import java.security.GeneralSecurityException;
@@ -47,22 +46,41 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
     private static final String APPLICATION_NAME = "LifeLog";
     private static final ZoneId JAPAN_ZONE = DateTimeUtil.TOKYO_ZONE;
 
-    private static HttpTransport HTTP_TRANSPORT;
     private static final JsonFactory JSON_FACTORY = GsonFactory.getDefaultInstance();
-
-    static {
-        try {
-            HTTP_TRANSPORT = GoogleNetHttpTransport.newTrustedTransport();
-        } catch (GeneralSecurityException | IOException e) {
-            log.error(MessageHelper.getMessage("infra.calendar.transport.init.error"), e);
-        }
-    }
 
     private final LifeLogConfig config;
     private final UserSettingRepository userSettingRepository;
     private final CryptoGateway cryptoGateway;
 
+    private HttpTransport httpTransport;
     private Calendar defaultCalendarService;
+
+    private synchronized HttpTransport getHttpTransport() {
+        if (httpTransport == null) {
+            try {
+                httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            } catch (GeneralSecurityException | IOException e) {
+                log.error(MessageHelper.getMessage("infra.calendar.transport.init.error"), e);
+                throw new GatewayException("Google NetHttpTransportの初期化に失敗しました。", e);
+            }
+        }
+        return httpTransport;
+    }
+
+    private synchronized Calendar getDefaultCalendarService() {
+        if (defaultCalendarService == null) {
+            try {
+                GoogleCredentials credentials = GoogleCredentials.getApplicationDefault()
+                        .createScoped(Collections.singletonList(CalendarScopes.CALENDAR));
+                defaultCalendarService = new Calendar.Builder(getHttpTransport(), JSON_FACTORY,
+                        new HttpCredentialsAdapter(credentials)).setApplicationName(APPLICATION_NAME).build();
+                log.info(MessageHelper.getMessage("infra.calendar.init"));
+            } catch (IOException e) {
+                throw new GatewayException("Google Calendar API サービスの初期化に失敗しました。", e);
+            }
+        }
+        return defaultCalendarService;
+    }
 
     @Override
     public boolean isHolidayOrPaidLeave(String calendarId, LocalDate date) {
@@ -117,19 +135,6 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
         }
     }
 
-    @PostConstruct
-    void init() {
-        try {
-            GoogleCredentials credentials = GoogleCredentials.getApplicationDefault()
-                    .createScoped(Collections.singletonList(CalendarScopes.CALENDAR));
-            defaultCalendarService = new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY,
-                    new HttpCredentialsAdapter(credentials)).setApplicationName(APPLICATION_NAME).build();
-            log.info(MessageHelper.getMessage("infra.calendar.init"));
-        } catch (IOException e) {
-            throw new GatewayException("Google Calendar API サービスの初期化に失敗しました。", e);
-        }
-    }
-
     /**
      * ユーザー固有の Google Calendar 連携クライアントを動的に生成・取得します。
      * <p>
@@ -153,7 +158,7 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
      */
     private Calendar getCalendarService(String calendarId) {
         if (config.demo().enabled()) {
-            return defaultCalendarService;
+            return getDefaultCalendarService();
         }
 
         try {
@@ -175,7 +180,7 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
                             .setRefreshToken(refreshToken)
                             .build();
 
-                    return new Calendar.Builder(HTTP_TRANSPORT, JSON_FACTORY, new HttpCredentialsAdapter(credentials))
+                    return new Calendar.Builder(getHttpTransport(), JSON_FACTORY, new HttpCredentialsAdapter(credentials))
                             .setApplicationName(APPLICATION_NAME)
                             .build();
                 }
@@ -184,7 +189,7 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
             log.warn(MessageHelper.getMessage("infra.calendar.user.client.error", calendarId), e);
         }
 
-        return defaultCalendarService;
+        return getDefaultCalendarService();
     }
 
     private boolean hasEventOnDate(Calendar service, String calendarId, LocalDate date, List<String> keywords) {
