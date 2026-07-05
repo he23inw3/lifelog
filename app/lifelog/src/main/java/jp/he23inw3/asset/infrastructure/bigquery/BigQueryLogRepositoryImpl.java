@@ -9,7 +9,6 @@ import com.google.cloud.bigquery.TableResult;
 import jakarta.enterprise.context.ApplicationScoped;
 import java.time.Instant;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -53,7 +52,7 @@ public class BigQueryLogRepositoryImpl implements DailyLogRepository {
     public void save(Log entry) {
         String dataset = config.bigquery().dataset();
         String table = BigQueryTableNames.DAILY_LOGS;
-        String now = DateTimeUtil.nowLocalDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE_TIME);
+        String now = DateTimeUtil.toBigQueryTimestampString(InstantUtil.now());
 
         Instant createdAt = entry.getCreatedAt();
         try {
@@ -68,7 +67,7 @@ public class BigQueryLogRepositoryImpl implements DailyLogRepository {
         if (createdAt == null) {
             createdAt = InstantUtil.now();
         }
-        String createdAtStr = DateTimeFormatter.ISO_LOCAL_DATE_TIME.withZone(DateTimeUtil.TOKYO_ZONE).format(createdAt);
+        String createdAtStr = DateTimeUtil.toBigQueryTimestampString(createdAt);
 
         String sqlTemplate = SqlLoader.load("sql/bigquery/upsert_daily_log.sql");
         String query = sqlTemplate.replace("{dataset}", dataset).replace("{table}", table);

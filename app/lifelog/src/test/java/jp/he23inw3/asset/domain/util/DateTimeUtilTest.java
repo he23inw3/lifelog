@@ -3,6 +3,7 @@ package jp.he23inw3.asset.domain.util;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.within;
 
+import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -42,6 +43,30 @@ class DateTimeUtilTest {
             LocalTime result = DateTimeUtil.nowLocalTime();
             LocalTime current = LocalTime.now(TOKYO_ZONE);
             assertThat(result).isCloseTo(current, within(5, ChronoUnit.SECONDS));
+        }
+    }
+
+    @Nested
+    @DisplayName("変換メソッドのテスト")
+    class ConvertMethods {
+
+        @Test
+        @DisplayName("toLocalDateTimeがInstantを東京タイムゾーンのLocalDateTimeに正しく変換すること")
+        void testToLocalDateTime() {
+            Instant instant = Instant.parse("2026-07-05T13:36:11.123456789Z");
+            LocalDateTime expected = LocalDateTime.of(2026, 7, 5, 22, 36, 11, 123456789);
+            assertThat(DateTimeUtil.toLocalDateTime(instant)).isEqualTo(expected);
+            assertThat(DateTimeUtil.toLocalDateTime(null)).isNull();
+        }
+
+        @Test
+        @DisplayName("toBigQueryTimestampStringがInstantをBigQuery用タイムスタンプ文字列に正しく変換すること")
+        void testToBigQueryTimestampString() {
+            // ナノ秒精度（9桁）の Instant を指定
+            Instant instant = Instant.parse("2026-07-05T13:36:11.123456789Z");
+            // マイクロ秒精度（6桁）かつ UTC (Z付き) で出力されることを検証
+            assertThat(DateTimeUtil.toBigQueryTimestampString(instant)).isEqualTo("2026-07-05T13:36:11.123456Z");
+            assertThat(DateTimeUtil.toBigQueryTimestampString(null)).isNull();
         }
     }
 }
