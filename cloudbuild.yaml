@@ -16,8 +16,7 @@ steps:
       - "quarkusBuild"
       - "-Dquarkus.native.enabled=true" # Triggers the GraalVM/Mandrel Native compilation
       - "-Dquarkus.package.jar.enabled=false" # Prevent building JAR simultaneously (not supported when native is enabled)
-      - "-Dquarkus.native.native-image-xmx=5g" # Limit Native Image compiler heap to 5g to fit inside 8gb RAM limit
-      - "-Dquarkus.native.cpu-count=4" # Limit compilation to 4 threads to reduce off-heap memory usage
+      - "-Dquarkus.native.native-image-xmx=16g" # Limit Native Image compiler heap to 16g inside the 32gb RAM instance
       - "-Dquarkus.container-image.build=true"
       - "-Dquarkus.container-image.push=true"
       - "-Dquarkus.container-image.registry=${_REGION}-docker.pkg.dev"
@@ -70,7 +69,7 @@ steps:
 
 options:
   logging: CLOUD_LOGGING_ONLY
-  machineType: E2_HIGHCPU_8 # Native Image compilation requires significant CPU and memory resources
+  machineType: E2_HIGHCPU_32 # Native Image compilation requires significant CPU and memory resources
 
 substitutions:
   _REGION: "asia-northeast1"
