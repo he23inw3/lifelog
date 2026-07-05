@@ -16,7 +16,7 @@ quarkus:
       - ".*reflect-config\\.json"
   # ── HTTP ─────────────────────────────────────────────────
   http:
-    port: 5000
+    port: ${PORT:5000}
     cors:
       enabled: true
       origins: "${CORS_ORIGINS:*}"

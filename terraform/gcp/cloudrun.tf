@@ -59,9 +59,9 @@ locals {
 resource "google_cloud_run_v2_service" "services" {
   for_each = local.cloud_run_services
 
-  name     = "${var.application_name}-${each.value.suffix}"
-  location = var.region
-  ingress  = "INGRESS_TRAFFIC_ALL"
+  name                = "${var.application_name}-${each.value.suffix}"
+  location            = var.region
+  ingress             = "INGRESS_TRAFFIC_ALL"
   deletion_protection = false
 
   template {
@@ -80,7 +80,8 @@ resource "google_cloud_run_v2_service" "services" {
             { name = "APP_ENV", value = var.environment },
             { name = "DEMO_MODE", value = each.value.demo_mode },
             { name = "CORS_ORIGINS", value = each.value.cors_origins },
-            { name = "BOOTSTRAP_ALLOWED_EMAIL", value = var.bootstrap_allowed_email }
+            { name = "BOOTSTRAP_ALLOWED_EMAIL", value = var.bootstrap_allowed_email },
+            { name = "PORT", value = "8080" }
           ]
         )
         content {
@@ -139,8 +140,8 @@ resource "google_cloud_run_v2_service" "services" {
 resource "google_cloud_run_v2_job" "jobs" {
   for_each = local.cloud_run_jobs
 
-  name     = "${var.application_name}-${each.value.suffix}"
-  location = var.region
+  name                = "${var.application_name}-${each.value.suffix}"
+  location            = var.region
   deletion_protection = false
 
   template {

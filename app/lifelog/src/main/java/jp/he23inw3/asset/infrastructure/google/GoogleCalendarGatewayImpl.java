@@ -55,33 +55,6 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
     private HttpTransport httpTransport;
     private Calendar defaultCalendarService;
 
-    private synchronized HttpTransport getHttpTransport() {
-        if (httpTransport == null) {
-            try {
-                httpTransport = GoogleNetHttpTransport.newTrustedTransport();
-            } catch (GeneralSecurityException | IOException e) {
-                log.error(MessageHelper.getMessage("infra.calendar.transport.init.error"), e);
-                throw new GatewayException("Google NetHttpTransportの初期化に失敗しました。", e);
-            }
-        }
-        return httpTransport;
-    }
-
-    private synchronized Calendar getDefaultCalendarService() {
-        if (defaultCalendarService == null) {
-            try {
-                GoogleCredentials credentials = GoogleCredentials.getApplicationDefault()
-                        .createScoped(Collections.singletonList(CalendarScopes.CALENDAR));
-                defaultCalendarService = new Calendar.Builder(getHttpTransport(), JSON_FACTORY,
-                        new HttpCredentialsAdapter(credentials)).setApplicationName(APPLICATION_NAME).build();
-                log.info(MessageHelper.getMessage("infra.calendar.init"));
-            } catch (IOException e) {
-                throw new GatewayException("Google Calendar API サービスの初期化に失敗しました。", e);
-            }
-        }
-        return defaultCalendarService;
-    }
-
     @Override
     public boolean isHolidayOrPaidLeave(String calendarId, LocalDate date) {
         // ユーザー固有の OAuth クライアントを取得（未連携の場合は ADC にフォールバック）
@@ -190,6 +163,51 @@ public class GoogleCalendarGatewayImpl implements GoogleCalendarGateway {
         }
 
         return getDefaultCalendarService();
+    }
+
+    /**
+     * HTTP 通信を行うための {@link HttpTransport} インスタンスをスレッドセーフに遅延初期化して取得します。
+     * <p>
+     * 静的初期化子 (static ブロック) での初期化を避けることで、GraalVM ネイティブイメージのビルド時に
+     * {@link sun.security.ssl.SSLSocketFactoryImpl} などのランタイム初期化対象クラスが
+     * ビルド時ヒープイメージに格納されてしまうデッドロックを回避します。
+     * </p>
+     *
+     * @return 初期化された {@link HttpTransport} インスタンス
+     * @throws GatewayException トランスポートの初期化に失敗した場合
+     */
+    private synchronized HttpTransport getHttpTransport() {
+        if (httpTransport == null) {
+            try {
+                httpTransport = GoogleNetHttpTransport.newTrustedTransport();
+            } catch (GeneralSecurityException | IOException e) {
+                log.error(MessageHelper.getMessage("infra.calendar.transport.init.error"), e);
+                throw new GatewayException("Google NetHttpTransportの初期化に失敗しました。", e);
+            }
+        }
+        return httpTransport;
+    }
+
+    /**
+     * アプリケーションデフォルトの認証情報 (ADC) を使用した、デフォルトの {@link Calendar} サービスを
+     * スレッドセーフに遅延初期化して取得します。
+     *
+     * @return デフォルトの {@link Calendar} サービスインスタンス
+     * @throws GatewayException サービスインスタンスの初期化に失敗した場合
+     */
+    private synchronized Calendar getDefaultCalendarService() {
+        if (defaultCalendarService == null) {
+            try {
+                GoogleCredentials credentials = GoogleCredentials.getApplicationDefault()
+                        .createScoped(Collections.singletonList(CalendarScopes.CALENDAR));
+                defaultCalendarService = new Calendar.Builder(getHttpTransport(), JSON_FACTORY,
+                        new HttpCredentialsAdapter(credentials)).setApplicationName(APPLICATION_NAME).build();
+                log.info(MessageHelper.getMessage("infra.calendar.init"));
+            } catch (IOException e) {
+                throw new GatewayException("Google Calendar API サービスの初期化に失敗しました。", e);
+            }
+        }
+        return defaultCalendarService;
     }
 
     private boolean hasEventOnDate(Calendar service, String calendarId, LocalDate date, List<String> keywords) {
