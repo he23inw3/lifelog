@@ -80,8 +80,7 @@ resource "google_cloud_run_v2_service" "services" {
             { name = "APP_ENV", value = var.environment },
             { name = "DEMO_MODE", value = each.value.demo_mode },
             { name = "CORS_ORIGINS", value = each.value.cors_origins },
-            { name = "BOOTSTRAP_ALLOWED_EMAIL", value = var.bootstrap_allowed_email },
-            { name = "PORT", value = "8080" }
+            { name = "BOOTSTRAP_ALLOWED_EMAIL", value = var.bootstrap_allowed_email }
           ]
         )
         content {
