@@ -1,9 +1,5 @@
 # ── IDE / Editor (Keep common settings, ignore local overrides) ──
-.idea/workspace.xml
-.idea/tasks.xml
-.idea/dictionary.xml
-.idea/shelf/
-.idea/locks/
+.idea/
 .vscode/launch.json
 .vscode/tasks.json
 

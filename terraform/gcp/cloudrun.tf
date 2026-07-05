@@ -116,7 +116,7 @@ resource "google_cloud_run_v2_service" "services" {
           cpu    = "1"
           memory = "512Mi"
         }
-        cpu_idle          = false
+        cpu_idle          = true
         startup_cpu_boost = true
       }
     }
