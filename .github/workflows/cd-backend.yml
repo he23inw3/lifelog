@@ -6,7 +6,18 @@ on:
       - "v-*"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run Backend CI (Test Suite)
+        uses: ./.github/actions/backend-ci
+        with:
+          working-directory: ./app/lifelog
+
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     permissions:
       contents: "read"
