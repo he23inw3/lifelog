@@ -115,7 +115,7 @@ lifelog:
     oauth-client-secret: "${GOOGLE_OAUTH_CLIENT_SECRET:dummy-google-client-secret}"
     oauth-redirect-uri: "${GOOGLE_OAUTH_REDIRECT_URI:http://localhost:5000/api/v1/auth/google/callback}"
   gemini:
-    location: "${GEMINI_LOCATION:asia-northeast1}"
+    location: "${GEMINI_LOCATION:us-central1}"
     model: "${GEMINI_MODEL:gemini-2.5-flash-lite}"
   slack:
     signing-secret: "${SLACK_SIGNING_SECRET:dummy-signing-secret}"

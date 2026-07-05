@@ -4,7 +4,8 @@ locals {
   common_envs = [
     { name = "GOOGLE_CLOUD_PROJECT", value = var.project_id },
     { name = "BIGQUERY_DATASET", value = google_bigquery_dataset.lifelog_dataset.dataset_id },
-    { name = "GOOGLE_GENAI_USE_VERTEXAI", value = "true" }
+    { name = "GOOGLE_GENAI_USE_VERTEXAI", value = "true" },
+    { name = "GEMINI_LOCATION", value = "us-central1" }
   ]
 
   # All available secrets in Secret Manager
