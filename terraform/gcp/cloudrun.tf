@@ -5,7 +5,8 @@ locals {
     { name = "GOOGLE_CLOUD_PROJECT", value = var.project_id },
     { name = "BIGQUERY_DATASET", value = google_bigquery_dataset.lifelog_dataset.dataset_id },
     { name = "GOOGLE_GENAI_USE_VERTEXAI", value = "true" },
-    { name = "GEMINI_LOCATION", value = "us-central1" }
+    { name = "GEMINI_LOCATION", value = "us-central1" },
+    { name = "GEMINI_MODEL", value = "gemini-2.5-flash-lite" }
   ]
 
   # All available secrets in Secret Manager
