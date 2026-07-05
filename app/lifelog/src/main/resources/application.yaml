@@ -13,7 +13,10 @@ quarkus:
       - "--initialize-at-run-time=com.slack.api"
       - "--exclude-config"
       - ".*google-genai.*\\.jar"
-      - ".*reflect-config\\.json"
+      - ".*google-genai/reflect-config\\.json"
+    resources:
+      includes:
+        - "sql/**"
   # ── HTTP ─────────────────────────────────────────────────
   http:
     port: ${PORT:5000}

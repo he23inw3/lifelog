@@ -51,15 +51,17 @@ function getCorsOrigin(request, allowedOrigin) {
 }
 
 /**
- * Build the CORS response headers for a given origin.
+ * Build the CORS response headers for a given origin and request.
+ * @param {Request} request
  * @param {string} origin
  * @returns {Record<string, string>}
  */
-function buildCorsHeaders(origin) {
+function buildCorsHeaders(request, origin) {
+  const requestHeaders = request.headers.get("access-control-request-headers");
   return {
     "Access-Control-Allow-Origin": origin,
     "Access-Control-Allow-Methods": CORS_ALLOW_METHODS,
-    "Access-Control-Allow-Headers": CORS_ALLOW_HEADERS,
+    "Access-Control-Allow-Headers": requestHeaders || CORS_ALLOW_HEADERS,
     "Access-Control-Allow-Credentials": "true",
     "Access-Control-Max-Age": "86400",
   };
@@ -79,7 +81,7 @@ export default {
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
-        headers: buildCorsHeaders(corsOrigin),
+        headers: buildCorsHeaders(request, corsOrigin),
       });
     }
 
@@ -91,16 +93,27 @@ export default {
     const upstreamHeaders = new Headers(request.headers);
     upstreamHeaders.delete("host");
     upstreamHeaders.delete("origin");
+
+    // Propagate client IP
+    const clientIp = request.headers.get("cf-connecting-ip");
+    if (clientIp) {
+      upstreamHeaders.set("x-forwarded-for", clientIp);
+      upstreamHeaders.set("x-real-ip", clientIp);
+    }
+
     upstreamHeaders.delete("cf-connecting-ip");
     upstreamHeaders.delete("cf-ipcountry");
     upstreamHeaders.delete("cf-ray");
     upstreamHeaders.delete("cf-visitor");
 
+    const hasBody = request.method !== "GET" && request.method !== "HEAD";
     const upstreamRequest = new Request(upstreamUrl, {
       method: request.method,
       headers: upstreamHeaders,
-      body: request.method !== "GET" && request.method !== "HEAD" ? request.body : null,
+      body: hasBody ? request.body : null,
       redirect: "follow",
+      // Include duplex: 'half' if the body is a stream (required in modern Fetch API)
+      ...(hasBody ? { duplex: "half" } : {}),
     });
 
     // ── Proxy to Cloud Run ───────────────────────────────────
@@ -109,14 +122,13 @@ export default {
       upstreamResponse = await fetch(upstreamRequest);
     } catch (err) {
       console.error("[proxy] upstream fetch failed:", err.message);
+      const errorHeaders = new Headers(buildCorsHeaders(request, corsOrigin));
+      errorHeaders.set("Content-Type", "application/json");
       return new Response(
         JSON.stringify({ error: "upstream_unavailable", message: err.message }),
         {
           status: 502,
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": corsOrigin,
-          },
+          headers: errorHeaders,
         }
       );
     }
@@ -125,7 +137,7 @@ export default {
     const responseHeaders = new Headers(upstreamResponse.headers);
 
     // Overwrite any upstream CORS headers with our own
-    const corsHeaders = buildCorsHeaders(corsOrigin);
+    const corsHeaders = buildCorsHeaders(request, corsOrigin);
     for (const [key, value] of Object.entries(corsHeaders)) {
       responseHeaders.set(key, value);
     }

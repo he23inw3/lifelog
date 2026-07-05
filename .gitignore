@@ -22,6 +22,7 @@ bin/
 out/
 *.bak
 backup/
+app/lifelog/src/main/resources/META-INF/native-image/
 
 # Quarkus specific
 app/lifelog/.quarkus/

@@ -129,3 +129,46 @@ tasks.register('resolveAllDependencies') {
         }
     }
 }
+
+tasks.register('generateReflectConfig') {
+    onlyIf {
+        def isNative = "true" == System.getProperty("quarkus.native.enabled") ||
+                       "true" == project.findProperty("quarkus.native.enabled")?.toString() ||
+                       "true" == project.gradle.startParameter.systemPropertiesArgs["quarkus.native.enabled"]
+        return isNative
+    }
+    doLast {
+        def genaiJar = configurations.compileClasspath.find { it.name.startsWith("google-genai-") && !it.name.contains("sources") }
+        if (!genaiJar) {
+            println "google-genai jar not found in compileClasspath"
+            return
+        }
+        
+        println "Scanning jar: ${genaiJar.absolutePath}"
+        def zip = new java.util.zip.ZipFile(genaiJar)
+        def classes = zip.entries().findAll {
+            it.name.startsWith("com/google/genai/types/") && it.name.endsWith(".class")
+        }.collect {
+            it.name.replace('/', '.').replace('.class', '')
+        }
+        
+        def config = classes.sort().collect { className ->
+            [
+                name: className,
+                allDeclaredConstructors: true,
+                allDeclaredMethods: true,
+                allDeclaredFields: true,
+                queryAllDeclaredMethods: true,
+                queryAllDeclaredConstructors: true
+            ]
+        }
+        
+        def outDir = file("src/main/resources/META-INF/native-image/jp.he23inw3/lifelog")
+        outDir.mkdirs()
+        def outFile = new File(outDir, "reflect-config.json")
+        outFile.text = groovy.json.JsonOutput.prettyPrint(groovy.json.JsonOutput.toJson(config))
+        println "Successfully generated reflect-config.json with ${classes.size()} classes at ${outFile.absolutePath}"
+    }
+}
+
+processResources.dependsOn generateReflectConfig

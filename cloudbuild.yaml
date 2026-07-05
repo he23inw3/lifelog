@@ -34,6 +34,7 @@ steps:
       - "${_APP_NAME}-webapi"
       - "--image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG}"
       - "--region=${_REGION}"
+      - "--max-instances=1"
 
   # Step 3: Deploy the Demo service revision to Cloud Run
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
@@ -44,6 +45,7 @@ steps:
       - "${_APP_NAME}-demo-webapi"
       - "--image=${_REGION}-docker.pkg.dev/${PROJECT_ID}/${_REPO_NAME}/${_IMAGE_NAME}:${_TAG}"
       - "--region=${_REGION}"
+      - "--max-instances=1"
 
   # Step 4: Update the Remind Batch Job with the new image
   - name: "gcr.io/google.com/cloudsdktool/cloud-sdk:latest"
