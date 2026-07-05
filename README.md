@@ -122,7 +122,7 @@ graph TD
     API -->|AI解析| Gemini
     API -. secrets .-> SM
 
-    Batch -->|設定/履歴参照| DB
+    Batch -->|設定/参照| DB
     Batch -->|リマインド/レポート送信| Slack
     Batch -. secrets .-> SM
 ```
