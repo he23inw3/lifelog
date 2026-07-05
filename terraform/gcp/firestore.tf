@@ -113,7 +113,24 @@ resource "google_firestore_index" "batch_execution_logs_batch_name_status_starte
   }
 }
 
+# demo_calendar_events indexes
+resource "google_firestore_index" "demo_calendar_events_calendar_id_date" {
+  project    = var.project_id
+  database   = google_firestore_database.database.name
+  collection = "demo_calendar_events"
+
+  fields {
+    field_path = "calendarId"
+    order      = "ASCENDING"
+  }
+  fields {
+    field_path = "date"
+    order      = "ASCENDING"
+  }
+}
+
 # ─────────────────────────────────────────────────────────────
+
 # Firestore Placeholders for Collections
 # ─────────────────────────────────────────────────────────────
 
@@ -122,7 +139,7 @@ resource "google_firestore_document" "user_sessions_placeholder" {
   database    = google_firestore_database.database.name
   collection  = "user_sessions"
   document_id = "_placeholder"
-  fields      = jsonencode({
+  fields = jsonencode({
     init = {
       stringValue = ""
     }
@@ -134,7 +151,7 @@ resource "google_firestore_document" "user_settings_placeholder" {
   database    = google_firestore_database.database.name
   collection  = "user_settings"
   document_id = "_placeholder"
-  fields      = jsonencode({
+  fields = jsonencode({
     init = {
       stringValue = ""
     }

@@ -3,7 +3,8 @@ locals {
   # Common environment variables for all Cloud Run containers
   common_envs = [
     { name = "GOOGLE_CLOUD_PROJECT", value = var.project_id },
-    { name = "BIGQUERY_DATASET", value = google_bigquery_dataset.lifelog_dataset.dataset_id }
+    { name = "BIGQUERY_DATASET", value = google_bigquery_dataset.lifelog_dataset.dataset_id },
+    { name = "GOOGLE_GENAI_USE_VERTEXAI", value = "true" }
   ]
 
   # All available secrets in Secret Manager
