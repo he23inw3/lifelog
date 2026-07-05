@@ -292,25 +292,6 @@ export const Home: React.FC = () => {
                 • **利用者ポータル**: 専用のポータル画面（<code>lifelog-portal</code>）から、アカウント連携設定や自動リマインド時刻の設定・変更が可能です。
               </Typography>
 
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 0.5 }}>
-                <Typography variant="caption" sx={{ color: '#0284c7', fontWeight: 700 }}>
-                  📄 構築・デプロイ方法はこちら：
-                </Typography>
-                <a
-                  href="/production-guide.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    color: '#025a87',
-                    fontSize: '12px',
-                    fontWeight: 700,
-                    textDecoration: 'underline'
-                  }}
-                >
-                  本番環境デプロイガイド (PDF)
-                </a>
-              </Box>
-
               {/* 開発中ステータス */}
               <Box sx={{ mt: 1.5, p: 1.5, bgcolor: '#fff7ed', border: '1px solid #fed7aa', borderRadius: '8px', display: 'flex', alignItems: 'flex-start', gap: 1 }}>
                 <Typography sx={{ fontSize: '16px', flexShrink: 0 }}>🚧</Typography>

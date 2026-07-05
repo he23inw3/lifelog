@@ -12,6 +12,45 @@ const CORS_ALLOW_METHODS = "GET, POST, PUT, DELETE, PATCH, OPTIONS";
 const CORS_ALLOW_HEADERS = "Authorization, Content-Type, Accept, X-Requested-With";
 
 /**
+ * Dynamic CORS origin helper that supports exact match, wildcard fallback for credentials,
+ * and Cloudflare Pages preview URLs (subdomains of the configured allowed origin).
+ * 
+ * @param {Request} request
+ * @param {string} allowedOrigin
+ * @returns {string}
+ */
+function getCorsOrigin(request, allowedOrigin) {
+  const requestOrigin = request.headers.get("origin");
+  if (!requestOrigin) {
+    return allowedOrigin;
+  }
+  
+  if (allowedOrigin === "*") {
+    return requestOrigin;
+  }
+  
+  if (requestOrigin === allowedOrigin) {
+    return requestOrigin;
+  }
+  
+  // Support Cloudflare Pages preview subdomains (e.g. https://[hash].[project].pages.dev)
+  try {
+    const allowedUrl = new URL(allowedOrigin);
+    const allowedHost = allowedUrl.hostname; // e.g. lifelog-demo.pages.dev
+    const requestUrl = new URL(requestOrigin);
+    const requestHost = requestUrl.hostname; // e.g. db662f7b.lifelog-demo.pages.dev
+    
+    if (requestHost === allowedHost || requestHost.endsWith("." + allowedHost)) {
+      return requestOrigin;
+    }
+  } catch (e) {
+    // Ignore URL parse errors and fall back
+  }
+  
+  return allowedOrigin;
+}
+
+/**
  * Build the CORS response headers for a given origin.
  * @param {string} origin
  * @returns {Record<string, string>}
@@ -34,12 +73,13 @@ export default {
    */
   async fetch(request, env) {
     const allowedOrigin = env.ALLOWED_ORIGIN || "*";
+    const corsOrigin = getCorsOrigin(request, allowedOrigin);
 
     // ── CORS Preflight ───────────────────────────────────────
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
-        headers: buildCorsHeaders(allowedOrigin),
+        headers: buildCorsHeaders(corsOrigin),
       });
     }
 
@@ -75,7 +115,7 @@ export default {
           status: 502,
           headers: {
             "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": allowedOrigin,
+            "Access-Control-Allow-Origin": corsOrigin,
           },
         }
       );
@@ -85,7 +125,7 @@ export default {
     const responseHeaders = new Headers(upstreamResponse.headers);
 
     // Overwrite any upstream CORS headers with our own
-    const corsHeaders = buildCorsHeaders(allowedOrigin);
+    const corsHeaders = buildCorsHeaders(corsOrigin);
     for (const [key, value] of Object.entries(corsHeaders)) {
       responseHeaders.set(key, value);
     }
