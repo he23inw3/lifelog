@@ -6,7 +6,6 @@
 .idea/locks/
 .vscode/launch.json
 .vscode/tasks.json
-.vscode/settings.json
 
 # ── Java / Gradle (Quarkus) ────────────────────────────────────
 .gradle/
