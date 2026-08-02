@@ -1,5 +1,8 @@
 # LifeLog - AI対話型日報・日記ツール
 
+> 「DevOps × AI Agent Hackathon　最新ツールでAIエージェント開発を体験しよう」提出作品
+https://protopedia.net/prototype/8748
+
 > [!WARNING]
 > **🚧 現在開発中です**
 > デモ画面は公開・利用可能ですが、その他の機能（本番 Slack 連携・利用者ポータル等）は現在開発中のため利用はできません。
