@@ -12,14 +12,14 @@ import lombok.Value;
 public class DemoMessage {
 
     /** Slack ユーザーID */
-    String slackUserId;
+    private String slackUserId;
 
     /** メッセージタイプ */
-    String type;
+    private String type;
 
     /** メッセージ本文 */
-    String text;
+    private String text;
 
     /** メッセージタイムスタンプ */
-    LocalDateTime timestamp;
+    private LocalDateTime timestamp;
 }

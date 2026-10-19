@@ -11,14 +11,14 @@ import lombok.Value;
 public class DashboardStats {
 
     /** 有効ユーザー数 */
-    int activeUserCount;
+    private int activeUserCount;
 
     /** 本日の登録ログ件数 */
-    int todayLogCount;
+    private int todayLogCount;
 
     /** 有効なセッション数 */
-    int activeSessionCount;
+    private int activeSessionCount;
 
     /** 本日のバッチエラー件数 */
-    int todayBatchErrorCount;
+    private int todayBatchErrorCount;
 }

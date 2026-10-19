@@ -15,35 +15,35 @@ import lombok.Value;
 public class Log {
 
     /** SlackユーザID */
-    String slackUserId;
+    private String slackUserId;
 
     /** ログ日付 */
-    LocalDate logDate;
+    private LocalDate logDate;
 
     /** 未加工テキスト */
-    String rawText;
+    private String rawText;
 
     /** 休暇フラグ */
-    boolean holiday;
+    private boolean holiday;
 
     /** タスク一覧 */
-    String tasks;
+    private String tasks;
 
     /** 稼働時間 */
-    Double workHours;
+    private Double workHours;
 
     /** 残業時間 */
-    Double overtimeHours;
+    private Double overtimeHours;
 
     /** 日記 */
-    String diary;
+    private String diary;
 
     /** 感情 */
-    Sentiment sentiment;
+    private Sentiment sentiment;
 
     /** 作成日時 */
-    Instant createdAt;
+    private Instant createdAt;
 
     /** 更新日時 */
-    Instant updatedAt;
+    private Instant updatedAt;
 }

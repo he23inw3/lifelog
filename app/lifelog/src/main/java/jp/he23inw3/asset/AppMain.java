@@ -30,11 +30,9 @@ public class AppMain {
         /**
          * アプリケーション実行時の制御フロー。
          *
-         * @param args
-         *            コマンドライン引数
+         * @param args コマンドライン引数
          * @return 終了コード（0: 正常終了, 1: 異常終了）
-         * @throws Exception
-         *             実行時の例外
+         * @throws Exception 実行時の例外
          */
         @Override
         public int run(String... args) throws Exception {
@@ -68,7 +66,7 @@ public class AppMain {
      * アプリケーションの起動メインメソッド。
      *
      * @param args
-     *            コマンドライン引数
+     *             コマンドライン引数
      */
     public static void main(String... args) {
         Quarkus.run(LifelogApp.class, args);

@@ -13,13 +13,13 @@ import lombok.Value;
 public class SlackLinkageToken {
 
     /** 連携用の一時トークン (UUID) */
-    String token;
+    private String token;
 
     /** 対象の Slack ユーザーID */
-    String slackUserId;
+    private String slackUserId;
 
     /** 有効期限 */
-    Instant expiresAt;
+    private Instant expiresAt;
 
     /**
      * トークンが期限切れかどうかを判定します。

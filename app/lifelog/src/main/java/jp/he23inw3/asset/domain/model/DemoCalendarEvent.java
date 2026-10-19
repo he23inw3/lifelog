@@ -12,20 +12,20 @@ import lombok.Value;
 public class DemoCalendarEvent {
 
     /** DEMOカレンダーID */
-    String calendarId;
+    private String calendarId;
 
     /** 日付 (yyyy-MM-dd) */
-    String date;
+    private String date;
 
     /** タイトル */
-    String title;
+    private String title;
 
     /** 説明 */
-    String description;
+    private String description;
 
     /** 祝日フラグ */
-    boolean holiday;
+    private boolean holiday;
 
     /** DEMOカレンダーに同期した日時 */
-    LocalDateTime syncedAt;
+    private LocalDateTime syncedAt;
 }

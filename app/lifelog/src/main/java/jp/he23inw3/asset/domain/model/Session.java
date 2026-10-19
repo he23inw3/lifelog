@@ -16,19 +16,19 @@ import lombok.Value;
 public class Session {
 
     /** Slack ユーザID */
-    String slackUserId;
+    private String slackUserId;
 
     /** セッションステータス */
-    SessionStatus status;
+    private SessionStatus status;
 
     /** 更新日時 */
-    Instant updatedAt;
+    private Instant updatedAt;
 
     /** 一時保存データ */
-    Map<String, String> tempData;
+    private Map<String, String> tempData;
 
     /** 有効期限 */
-    Instant expiresAt;
+    private Instant expiresAt;
 
     /**
      * セッションが期限切れかどうかを判定します。

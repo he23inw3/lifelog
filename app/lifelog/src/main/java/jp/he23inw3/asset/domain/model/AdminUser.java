@@ -14,23 +14,23 @@ import lombok.Value;
 public class AdminUser {
 
     /** Google OIDC 認証に基づく管理者のメールアドレス */
-    String email;
+    private String email;
 
     /** 管理者ユーザーの表示名 */
-    String userName;
+    private String userName;
 
     /** 管理者が現在有効かどうか（無効化されている場合は API 実行を制限する） */
-    boolean active;
+    private boolean active;
 
     /** この管理者を作成したオペレーターのメールアドレス */
-    String createdBy;
+    private String createdBy;
 
     /** 管理者が作成された日時 */
-    Instant createdAt;
+    private Instant createdAt;
 
     /** この管理者を最後に更新したオペレーターのメールアドレス */
-    String updatedBy;
+    private String updatedBy;
 
     /** 管理者が最後に更新された日時 */
-    Instant updatedAt;
+    private Instant updatedAt;
 }

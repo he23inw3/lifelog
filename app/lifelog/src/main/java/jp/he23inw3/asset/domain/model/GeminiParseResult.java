@@ -13,29 +13,29 @@ import lombok.Value;
 public class GeminiParseResult {
 
     /** 日報関連フラグ */
-    boolean logRelated;
+    private boolean logRelated;
 
     /** ログ日付 */
-    String logDate;
+    private String logDate;
 
     /** 休暇フラグ */
-    boolean holiday;
+    private boolean holiday;
 
     /** タスク */
-    String tasks;
+    private String tasks;
 
     /** 稼働時間 */
-    double workHours;
+    private double workHours;
 
     /** 残業時間 */
-    double overtimeHours;
+    private double overtimeHours;
 
     /** 日記 */
-    String diary;
+    private String diary;
 
     /** 感情 */
-    Sentiment sentiment;
+    private Sentiment sentiment;
 
     /** 応答メッセージ */
-    String replyMessage;
+    private String replyMessage;
 }

@@ -7,39 +7,40 @@ import lombok.Value;
 /**
  * ユーザー個別設定情報を保持するドメインモデル（値オブジェクト）。
  * <p>
- * Slack ユーザー ID、表示用のユーザー名、日報リマインド時刻、Google カレンダー ID、 およびリマインド機能の有効・無効状態などを管理します。
+ * Slack ユーザー ID、表示用のユーザー名、日報リマインド時刻、Google カレンダー ID、
+ * およびリマインド機能の有効・無効状態などを管理します。
  */
 @Value
 @Builder(toBuilder = true)
 public class UserSetting {
 
     /** Slack ユーザID */
-    String slackUserId;
+    private String slackUserId;
 
     /** OIDC メールアドレス（email ↔ slackUserId のマッピングキー） */
-    String email;
+    private String email;
 
     /** 表示名 */
-    String userName;
+    private String userName;
 
     /** リマインド時刻 */
-    String remindTime;
+    private String remindTime;
 
     /** Google Calendar ID */
-    String googleCalendarId;
+    private String googleCalendarId;
 
     /** アクティブフラグ */
-    boolean active;
+    private boolean active;
 
     /** Google 連携済みフラグ */
-    boolean googleLinked;
+    private boolean googleLinked;
 
     /** 暗号化された Google OAuth リフレッシュトークン */
-    String googleRefreshToken;
+    private String googleRefreshToken;
 
     /** 作成日時 */
-    Instant createdAt;
+    private Instant createdAt;
 
     /** 更新日時 */
-    Instant updatedAt;
+    private Instant updatedAt;
 }
