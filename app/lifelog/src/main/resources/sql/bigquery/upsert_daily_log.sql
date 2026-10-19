@@ -1,4 +1,5 @@
 -- BigQuery daily_logs テーブルへの冪等 upsert（DELETE + INSERT）
+-- Merge文はBigQuery Emulatorでエラーとなるため使用していない
 -- プレースホルダ: {dataset}, {table}
 -- パラメータ: @slackUserId, @logDate, @rawText, @isHoliday, @tasks,
 --             @workHours, @overtimeHours, @diary, @sentiment, @updatedAt, @traceId, @createdAt
