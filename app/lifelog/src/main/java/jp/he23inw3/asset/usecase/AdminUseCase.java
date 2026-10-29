@@ -8,6 +8,7 @@ import jp.he23inw3.asset.domain.exception.ForbiddenException;
 import jp.he23inw3.asset.domain.exception.ResourceNotFoundException;
 import jp.he23inw3.asset.domain.model.AdminUser;
 import jp.he23inw3.asset.domain.repository.AdminUserRepository;
+import jp.he23inw3.asset.domain.util.InstantUtil;
 import lombok.RequiredArgsConstructor;
 
 /**
@@ -36,7 +37,7 @@ public class AdminUseCase {
     /**
      * 管理者情報を保存または更新します。
      *
-     * @param newAdmin 保存または更新対象の管理者ユーザー情報
+     * @param newAdmin      保存または更新対象の管理者ユーザー情報
      * @param operatorEmail 処理を実行したオペレーター（操作者）のメールアドレス
      * @return 保存完了後の管理者ユーザー情報
      */
@@ -83,12 +84,12 @@ public class AdminUseCase {
     /**
      * 新規登録用の管理者ドメインモデルを構築します。
      *
-     * @param newAdmin 基本情報が格納された管理者オブジェクト
+     * @param newAdmin      基本情報が格納された管理者オブジェクト
      * @param operatorEmail 登録操作を実行したオペレーターのメールアドレス
      * @return 監査情報（作成者、作成日時等）が追加された AdminUser オブジェクト
      */
     private AdminUser buildNewAdminUser(AdminUser newAdmin, String operatorEmail) {
-        Instant now = Instant.now();
+        Instant now = InstantUtil.now();
         return newAdmin.toBuilder()
                 .createdBy(operatorEmail)
                 .createdAt(now)
@@ -100,8 +101,8 @@ public class AdminUseCase {
     /**
      * 更新用の管理者ドメインモデルを構築します。
      *
-     * @param newAdmin 更新データが格納された管理者オブジェクト
-     * @param existing 既存の登録済み管理者オブジェクト（作成者情報を引き継ぐため）
+     * @param newAdmin      更新データが格納された管理者オブジェクト
+     * @param existing      既存の登録済み管理者オブジェクト（作成者情報を引き継ぐため）
      * @param operatorEmail 更新操作を実行したオペレーターのメールアドレス
      * @return 既存の作成者情報を保護しつつ、新しい更新監査情報が設定された AdminUser オブジェクト
      */
@@ -110,7 +111,7 @@ public class AdminUseCase {
                 .createdBy(existing.getCreatedBy())
                 .createdAt(existing.getCreatedAt())
                 .updatedBy(operatorEmail)
-                .updatedAt(Instant.now())
+                .updatedAt(InstantUtil.now())
                 .build();
     }
 }
